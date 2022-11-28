@@ -13,6 +13,65 @@ export default function () {
       <section className={`${projectStyles.projects}`}>
         <h2 className={utilStyles.headingXl}>Projects</h2>
         <ul className={`${utilStyles.list}`}>
+          {/* rekindle */}
+          <li className={`${projectStyles.project} ${utilStyles.listItem}`}>
+            <div className={projectStyles.projectData}>
+              <h3 className={utilStyles.headingLg}>rekindle</h3>
+              <div className={projectStyles.projectLinks}>
+                <h3 className={utilStyles.headingMd}>
+                  <Link
+                    className={`${utilStyles.link}`}
+                    href="https://rekindle.vercel.app/"
+                  >
+                    Site
+                  </Link>
+                </h3>
+                <p
+                  className={`${utilStyles.headingMd} ${projectStyles.separator}`}
+                >
+                  <b>|</b>
+                </p>
+                <h3 className={utilStyles.headingMd}>
+                  <Link
+                    className={`${utilStyles.link}`}
+                    href="https://github.com/rekindle-devs/rekindle"
+                  >
+                    Repo Link
+                  </Link>
+                </h3>
+              </div>
+              <p>Sept 2022</p>
+              <p>
+                rekindle is an online mental health hotline service accessible
+                to both users and hotline responders built at Hack the North
+                2022, which was my first in-person hackathon.
+              </p>
+              <ul
+                className={`${projectStyles.features} ${utilStyles.listItem}`}
+              >
+                <li>
+                  Integrated the text generation and summarization features from the co:here AI API 
+                </li>
+                <li>
+                  Implemented data persistence to store user queries with Firebase Cloud Firestore
+                </li>
+                <li>
+                  Developed the backend page-routing logic with Next.js 
+                </li>
+              </ul>
+              <div
+                className={`${projectStyles.technologies} ${utilStyles.listItem}`}
+              >
+                <span className={projectStyles.technologySpan}>
+                  <small className={projectStyles.technology}>React</small>
+                  <small className={projectStyles.technology}>Firebase</small>
+                  <small className={projectStyles.technology}>Next.js</small>
+                  <small className={projectStyles.technology}>Chakra UI</small>
+                </span>
+              </div>
+            </div>
+          </li>
+
           {/* LastDash */}
           <li className={`${projectStyles.project} ${utilStyles.listItem}`}>
             <div className={projectStyles.projectData}>
