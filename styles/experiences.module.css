@@ -1,0 +1,27 @@
+.experiences {
+    /* view height - navbar - page top - page bottom - footer */
+    min-height: calc(100vh - 80px - 3rem - 2rem - 110px);
+}
+
+.experience {
+    display: grid;
+    align-items: center;
+}
+
+.technologySpan > *:not(:last-child) {
+    margin-right: 10px; 
+}
+
+.technologySpan {
+    width: auto;
+    display: flex; 
+    flex-wrap: wrap;
+}
+
+.technology {
+    background-color: #9DD7D9;
+    color: #FFF;
+    width: auto;
+    margin-top: 4px;
+    padding: 2px 10px;
+}
