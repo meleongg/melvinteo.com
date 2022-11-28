@@ -25,3 +25,8 @@
   justify-content: center;
   align-items: center;
 }
+
+.mode:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}

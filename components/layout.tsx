@@ -9,7 +9,7 @@ export const siteTitle = "Welcome to mthteo.xyz!";
 
 export default function Layout({ children, main } : { children: React.ReactNode, main?: boolean }) {
   return (
-    <div className={`${styles.container} ${utilStyles.darkText}`}>
+    <div className={`${styles.container}`}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta

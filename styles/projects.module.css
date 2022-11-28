@@ -1,43 +1,47 @@
 .projects {
-    /* view height - navbar - page top - page bottom - footer */
-    min-height: calc(100vh - 80px - 3rem - 2rem - 110px);
+  /* view height - navbar - page top - page bottom - footer */
+  min-height: calc(100vh - 80px - 3rem - 2rem - 110px);
 }
 
 .project {
-    display: grid;
-    align-items: center;
+  display: grid;
+  align-items: center;
 }
 
 .projectLinks {
-    display: flex; 
+  display: flex;
 }
 
 .projectLinks > * {
-    margin: 0;
+  margin: 0;
 }
 
 .separator {
-    padding: 0 5px; 
+  padding: 0 5px;
 }
 
 .projectLinks:last-child {
-    padding-left: 5px;
+  padding-left: 5px;
 }
 
 .technologySpan > *:not(:last-child) {
-    margin-right: 10px; 
+  margin-right: 10px;
 }
 
 .technologySpan {
-    width: auto;
-    display: flex; 
-    flex-wrap: wrap;
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .technology {
-    background-color: #9DD7D9;
-    color: #FFF;
-    width: auto;
-    margin-top: 4px;
-    padding: 2px 10px;
+  background-color: #9dd7d9;
+  color: #fff;
+  width: auto;
+  margin-top: 4px;
+  padding: 2px 10px;
+}
+
+[data-theme="dark"] .technology {
+  color: #333;
 }

@@ -10,6 +10,8 @@ body {
   font-size: 18px;
   font-family: 'Poppins', sans-serif;
   overflow-y: overlay;
+  background: #E7E7DD;
+  color: #22374F;
 }
 
 * {
@@ -25,4 +27,9 @@ a {
 img {
   max-width: 100%;
   display: block;
+}
+
+[data-theme="dark"] body {
+  background: #333;
+  color: #FFF;  
 }
