@@ -22,6 +22,7 @@ export default function () {
                   <Link
                     className={`${utilStyles.link}`}
                     href="https://rekindle.vercel.app/"
+                    target="_blank"
                   >
                     Site
                   </Link>
@@ -35,6 +36,7 @@ export default function () {
                   <Link
                     className={`${utilStyles.link}`}
                     href="https://github.com/rekindle-devs/rekindle"
+                    target="_blank"
                   >
                     Repo Link
                   </Link>
@@ -81,6 +83,7 @@ export default function () {
                   <Link
                     className={`${utilStyles.link}`}
                     href="https://meleongg.github.io/lastdash/"
+                    target="_blank"
                   >
                     Site
                   </Link>
@@ -94,6 +97,7 @@ export default function () {
                   <Link
                     className={`${utilStyles.link}`}
                     href="https://github.com/meleongg/lastdash"
+                    target="_blank"
                   >
                     Repo Link
                   </Link>
@@ -141,6 +145,7 @@ export default function () {
                   <Link
                     className={`${utilStyles.link}`}
                     href="https://meleongg.github.io/battleship/"
+                    target="_blank"
                   >
                     Site
                   </Link>
@@ -154,6 +159,7 @@ export default function () {
                   <Link
                     className={`${utilStyles.link}`}
                     href="https://github.com/meleongg/battleship"
+                    target="_blank"
                   >
                     Repo Link
                   </Link>
@@ -196,6 +202,7 @@ export default function () {
                   <Link
                     className={`${utilStyles.link}`}
                     href="https://meleongg.github.io/finnit/"
+                    target="_blank"
                   >
                     Site
                   </Link>
@@ -209,6 +216,7 @@ export default function () {
                   <Link
                     className={`${utilStyles.link}`}
                     href="https://github.com/meleongg/finnit"
+                    target="_blank"
                   >
                     Repo Link
                   </Link>
@@ -259,6 +267,7 @@ export default function () {
                   <Link
                     className={`${utilStyles.link}`}
                     href="https://github.com/meleongg/quizolingo"
+                    target="_blank"
                   >
                     Repo Link
                   </Link>

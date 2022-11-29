@@ -4,7 +4,6 @@ import { faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import footerStyles from "../styles/footer.module.css";
-import utilStyles from "../styles/utils.module.css";
 import Link from "next/link";
 
 export default function Footer() {
@@ -12,16 +11,16 @@ export default function Footer() {
         <footer className={footerStyles.footer}>
             <p>Melvin Teo @ 2022</p>
             <div className={footerStyles.socials}>
-                <Link href="mailto:mthteo@gmail.com">
+                <Link href="mailto:mthteo@gmail.com" target="_blank">
                     <FontAwesomeIcon className={footerStyles.socialIcon} icon={faEnvelope} />
                 </Link>
-                <Link href="https://github.com/meleongg">
+                <Link href="https://github.com/meleongg" target="_blank">
                     <FontAwesomeIcon className={footerStyles.socialIcon} icon={faGithub} />
                 </Link>
-                <Link href="https://www.linkedin.com/in/melvinhteo/">
+                <Link href="https://www.linkedin.com/in/melvinhteo/" target="_blank">
                     <FontAwesomeIcon className={footerStyles.socialIcon} icon={faLinkedinIn} />
                 </Link>
-                <Link href="https://twitter.com/meleongg">
+                <Link href="https://twitter.com/meleongg" target="_blank">
                     <FontAwesomeIcon className={footerStyles.socialIcon} icon={faTwitter} />
                 </Link>
             </div>
