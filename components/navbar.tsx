@@ -12,6 +12,9 @@ export default function NavBar() {
 
   useEffect(() => {
     setMounted(true);
+    if (theme === "") {
+      setTheme("light");
+    }
   }, []);
 
   if (!mounted) {

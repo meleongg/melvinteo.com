@@ -40,7 +40,7 @@
 }
 
 .altText {
-  color: #9DD7D9;
+  color: #68ABAD;
 }
 
 .darkText {
@@ -48,6 +48,6 @@
 }
 
 .link:hover {
-  color: #7ab9bb;
+  color: #5A8E8F;
   transition: color 0.3s ease-in-out;
 }
