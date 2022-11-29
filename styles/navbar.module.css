@@ -40,8 +40,12 @@
   .nav {
     height: 110px;
     display: grid; 
-    grid-template-columns: 1fr 50px;
+    grid-template-columns: 1fr 40px;
     grid-template-rows: repeat(2, 1fr);
+  }
+
+  .logo { 
+    padding: 0px;
   }
 
   .navLinks {

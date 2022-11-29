@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 
 export default function NavBar() {
   const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
   const { theme, setTheme } = useTheme();
 
   useEffect(() => {
@@ -42,20 +43,13 @@ export default function NavBar() {
           </Link>
         </li>
       </ul>
-      {(theme == "dark") && <FontAwesomeIcon
-          className={navbarStyles.mode}
-          icon={faSun}
-          onClick={() =>
-            setTheme("light")
-          }
-        />}
-      {(theme == "light") && <FontAwesomeIcon
-          className={navbarStyles.mode}
-          icon={faMoon}
-          onClick={() =>
-            setTheme("dark")
-          }
-        />}
+      <FontAwesomeIcon
+        className={navbarStyles.mode}
+        icon={resolvedTheme == "dark" ? faSun : faMoon}
+        onClick={() =>
+          resolvedTheme == "dark" ? setTheme("light") : setTheme("dark")
+        }
+      />
     </nav>
   );
 }
