@@ -12,9 +12,6 @@ export default function NavBar() {
 
   useEffect(() => {
     setMounted(true);
-    if (theme === "") {
-      setTheme("light");
-    }
   }, []);
 
   if (!mounted) {
@@ -45,13 +42,20 @@ export default function NavBar() {
           </Link>
         </li>
       </ul>
-      <FontAwesomeIcon
+      {(theme == "dark") && <FontAwesomeIcon
           className={navbarStyles.mode}
-          icon={theme == "dark" ? faSun : faMoon}
+          icon={faSun}
           onClick={() =>
-            theme == "dark" ? setTheme("light") : setTheme("dark")
+            setTheme("light")
           }
-        />
+        />}
+      {(theme == "light") && <FontAwesomeIcon
+          className={navbarStyles.mode}
+          icon={faMoon}
+          onClick={() =>
+            setTheme("dark")
+          }
+        />}
     </nav>
   );
 }
