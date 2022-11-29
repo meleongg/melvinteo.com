@@ -25,7 +25,7 @@ export default function NavBar() {
           mthteo.xyz
         </Link>
       </div>
-      <ul className={navbarStyles.navLinks}>
+      <ul className={`${navbarStyles.navLinks}`}>
         <li className={navbarStyles.navLink}>
           <Link className={utilStyles.link} href="/experiences">
             experience
@@ -41,14 +41,14 @@ export default function NavBar() {
             blog
           </Link>
         </li>
-        <FontAwesomeIcon
+      </ul>
+      <FontAwesomeIcon
           className={navbarStyles.mode}
           icon={theme == "dark" ? faSun : faMoon}
           onClick={() =>
             theme == "dark" ? setTheme("light") : setTheme("dark")
           }
         />
-      </ul>
     </nav>
   );
 }

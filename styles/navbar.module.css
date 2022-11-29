@@ -26,7 +26,44 @@
   align-items: center;
 }
 
+.mode {
+  padding-left: 30px;
+  font-size: 30px;
+}
+
 .mode:hover {
   cursor: pointer;
   transform: scale(1.2);
+}
+
+/* iPad */
+@media (max-width: 768px) {
+  .nav {
+    height: 110px;
+    display: grid; 
+    grid-template-columns: 1fr 50px;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .navLinks {
+    width: 50%; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .navLinks > *:not(:last-child) {
+    padding-right: 10px; 
+  }
+
+  .mode {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding-left: 0; 
+  }
+}
+
+/* Phone */
+@media (max-width: 480px) {
 }

@@ -15,9 +15,10 @@
 }
 
 .introData {
-  display: flex; 
-  justify-content: center;
+  display: grid; 
+  justify-items: center;
   align-items: center;
+  grid-template-columns: 1fr 250px;
   /* 100vh - 80px (navbar) - 3rem (top) - 2rem(bottom) - 70px (intro) - 40px (intro-bottom) - 110px (footer) */
   min-height: calc(100vh - 80px - 3rem - 2rem - 70px - 40px - 110px);
   width: 100%;
@@ -26,4 +27,33 @@
 
 .introDataText {
   padding-right: 100px;
+}
+
+/* iPad */
+@media (max-width: 768px) {
+  .intro {
+    padding-top: 15px;
+    height: 100px;
+    flex-direction: column;
+  }
+
+  .introData {
+    padding-top: 20px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 350px 1fr;
+    row-gap: 20px;
+  }
+
+  .introData > img {
+    grid-row: 1 / 2;
+  }
+
+  .introDataText {
+    padding-right: 0px;
+  }
+}
+
+/* Phone */
+@media (max-width: 480px) {
+  /* no styles needed */
 }
