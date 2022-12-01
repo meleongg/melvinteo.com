@@ -55,7 +55,7 @@ export default function Home({
               </small>
               <div className={postsStyles.tags}>
                 {tags.split(" ").map((tag) => (
-                  <span className={postsStyles.tagSpan} key={`${id}-tag`}>
+                  <span className={postsStyles.tagSpan} key={`${id}-${tag}`}>
                     <small className={postsStyles.tag}>{tag}</small>
                   </span>
                 ))}

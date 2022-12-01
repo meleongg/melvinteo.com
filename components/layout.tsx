@@ -1,13 +1,7 @@
-import Head from "next/head";
 import styles from "../styles/layout.module.css";
 import Link from "next/link";
 import NavBar from "./navbar";
 import Footer from "./footer";
-
-const metadata = {
-  title: "Home | mthteo.xyz",
-  description: "Homepage of Melvin Teo's personal site",
-};
 
 export default function Layout({
   children,

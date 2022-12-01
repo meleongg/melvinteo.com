@@ -1,24 +1,25 @@
-import Layout from '../../components/layout'
-import { getAllPostIds, getPostData } from '../../lib/posts'
-import Head from 'next/head'
-import Date from '../../components/date'
-import utilStyles from '../../styles/utils.module.css'
-import { GetStaticProps, GetStaticPaths } from 'next'
-
-const metadata = {
-  title: "Blog Post | mthteo.xyz",
-  description: "Blog post for Melvin Teo's personal site",
-};
+import { getAllPostIds, getPostData } from "../../lib/posts";
+import { GetStaticProps, GetStaticPaths } from "next";
+import Layout from "../../components/layout";
+import Head from "next/head";
+import Date from "../../components/date";
+import utilStyles from "../../styles/utils.module.css";
+import postStyles from "../../styles/posts.module.css";
 
 export default function Post({
-  postData
+  postData,
 }: {
   postData: {
-    title: string
-    date: string
-    contentHtml: string
-  }
+    title: string;
+    date: string;
+    contentHtml: string;
+  };
 }) {
+  const metadata = {
+    title: `${postData.title} | mthteo.xyz`,
+    description: `Blog post with title: ${postData.title} for Melvin Teo's personal site`,
+  };
+
   return (
     <Layout>
       <Head>
@@ -38,7 +39,7 @@ export default function Post({
         {/* <meta name="twitter:image" content={metadata.image} /> */}
         <link rel="icon" href="/favicon.svg" />
       </Head>
-      <article>
+      <article className={postStyles.article}>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.altText}>
           <Date dateString={postData.date} />
@@ -46,22 +47,22 @@ export default function Post({
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
     </Layout>
-  )
+  );
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllPostIds()
+  const paths = getAllPostIds();
   return {
     paths,
-    fallback: false
-  }
-}
+    fallback: false,
+  };
+};
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const postData = await getPostData(params?.id as string)
+  const postData = await getPostData(params?.id as string);
   return {
     props: {
-      postData
-    }
-  }
-}
+      postData,
+    },
+  };
+};

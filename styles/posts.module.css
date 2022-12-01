@@ -28,3 +28,12 @@
 [data-theme="dark"] .tag {
   color: #333;
 }
+
+.article a {
+  color: #68ABAD;
+}
+
+.article a:hover {
+  color: #5A8E8F;
+  transition: color 0.3s ease-in-out;
+} 
