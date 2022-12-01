@@ -7,7 +7,7 @@ import { ThemeProvider } from "next-themes";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-import * as ga from "../lib/ga";
+import * as ga from "../lib/gtag";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
