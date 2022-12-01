@@ -5,6 +5,11 @@ import Date from '../../components/date'
 import utilStyles from '../../styles/utils.module.css'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
+const metadata = {
+  title: "Blog Post | mthteo.xyz",
+  description: "Blog post for Melvin Teo's personal site",
+};
+
 export default function Post({
   postData
 }: {
@@ -17,7 +22,21 @@ export default function Post({
   return (
     <Layout>
       <Head>
-        <title>{postData.title}</title>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        {/* <meta name="image" content={metadata.image} /> */}
+
+        <meta property="og:url" content="https://mthteo-xyz.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={metadata.title} />
+        <meta property="og:description" content={metadata.description} />
+        {/* <meta property="og:image" content={metadata.image} /> */}
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={metadata.title} />
+        <meta name="twitter:description" content={metadata.description} />
+        {/* <meta name="twitter:image" content={metadata.image} /> */}
+        <link rel="icon" href="/favicon.svg" />
       </Head>
       <article>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
