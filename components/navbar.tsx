@@ -4,20 +4,9 @@ import Link from "next/link";
 import navbarStyles from "../styles/navbar.module.css";
 import utilStyles from "../styles/utils.module.css";
 import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
 
 export default function NavBar() {
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
   const { theme, setTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
 
   return (
     <nav className={`${navbarStyles.nav}`}>
@@ -45,9 +34,9 @@ export default function NavBar() {
       </ul>
       <FontAwesomeIcon
         className={navbarStyles.mode}
-        icon={resolvedTheme == "dark" ? faSun : faMoon}
+        icon={theme == "dark" ? faMoon : faSun}
         onClick={() =>
-          resolvedTheme == "dark" ? setTheme("light") : setTheme("dark")
+          theme == "dark" ? setTheme("light") : setTheme("dark")
         }
       />
     </nav>

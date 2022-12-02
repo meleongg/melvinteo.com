@@ -50,7 +50,8 @@ export default function Home({
                 "a 2nd-year UBC CS student",
                 "a software dev",
                 "a volleyball addict",
-                "a big brother",
+                "an aspiring guitarist",
+                "a non-coffee drinker :)",
               ],
               autoStart: true,
               loop: true,
@@ -77,7 +78,7 @@ export default function Home({
                 {" "}
                 personal projects
               </Link>
-              . I've closely collaborated with other developers through my
+              , and I've closely collaborated with other developers through my
               <Link
                 className={`${utilStyles.altText} ${utilStyles.link}`}
                 href="/experiences"
@@ -85,12 +86,21 @@ export default function Home({
                 {" "}
                 work experience{" "}
               </Link>
-              as well as informal hackathons settings.
+              and informal hackathon settings.
             </p>
             <p>
-              In my spare time, you can find me biking around Vancouver, playing
-              volleyball, learning world languages, strumming a guitar, or
-              hanging out with friends & family. I also sometimes{" "}
+              In my spare time, you can find me organizing some awesome events
+              at{" "}
+              <Link
+                className={`${utilStyles.altText} ${utilStyles.link}`}
+                href="https://www.nwplus.io"
+                target="_blank"
+              >
+                nwPlus
+              </Link>{" "}
+              biking around Vancouver, playing volleyball, learning world
+              languages, strumming a guitar, or hanging out with friends &
+              family. I also sometimes{" "}
               <Link
                 className={`${utilStyles.altText} ${utilStyles.link}`}
                 href="/posts"
@@ -117,7 +127,7 @@ export default function Home({
             height={330}
             className={`${utilStyles.borderCircle}`}
             width={250}
-            alt="headshot of Melvin Teo"
+            alt="headshot of the author, Melvin Teo"
           />
         </div>
       </section>
