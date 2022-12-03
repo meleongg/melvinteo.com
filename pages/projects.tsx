@@ -7,6 +7,7 @@ import Link from "next/link";
 const metadata = {
   title: "Projects | mthteo.xyz",
   description: "Project page of Melvin Teo's personal site",
+  image: "https://mthteo-xyz.vercel.app/meta-image.png",
 };
 
 export default function () {
@@ -15,18 +16,18 @@ export default function () {
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        {/* <meta name="image" content={metadata.image} /> */}
+        <meta name="image" content={metadata.image} />
 
         <meta property="og:url" content="https://mthteo-xyz.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        {/* <meta property="og:image" content={metadata.image} /> */}
+        <meta property="og:image" content={metadata.image} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
-        {/* <meta name="twitter:image" content={metadata.image} /> */}
+        <meta name="twitter:image" content={metadata.image} />
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <section className={`${projectStyles.projects}`}>
@@ -71,14 +72,14 @@ export default function () {
                 className={`${projectStyles.features} ${utilStyles.listItem}`}
               >
                 <li>
-                  Integrated the text generation and summarization features from the co:here AI API 
+                  Integrated the text generation and summarization features from
+                  the co:here AI API
                 </li>
                 <li>
-                  Implemented data persistence to store user queries with Firebase Cloud Firestore
+                  Implemented data persistence to store user queries with
+                  Firebase Cloud Firestore
                 </li>
-                <li>
-                  Developed the backend page-routing logic with Next.js 
-                </li>
+                <li>Developed the backend page-routing logic with Next.js</li>
               </ul>
               <div
                 className={`${projectStyles.technologies} ${utilStyles.listItem}`}

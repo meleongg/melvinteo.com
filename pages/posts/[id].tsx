@@ -18,6 +18,7 @@ export default function Post({
   const metadata = {
     title: `${postData.title} | mthteo.xyz`,
     description: `Blog post with title: ${postData.title} for Melvin Teo's personal site`,
+    image: "https://mthteo-xyz.vercel.app/meta-image.png",
   };
 
   return (
@@ -25,18 +26,18 @@ export default function Post({
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        {/* <meta name="image" content={metadata.image} /> */}
+        <meta name="image" content={metadata.image} />
 
         <meta property="og:url" content="https://mthteo-xyz.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        {/* <meta property="og:image" content={metadata.image} /> */}
+        <meta property="og:image" content={metadata.image} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
-        {/* <meta name="twitter:image" content={metadata.image} /> */}
+        <meta name="twitter:image" content={metadata.image} />
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <article className={postStyles.article}>

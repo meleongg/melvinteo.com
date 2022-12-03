@@ -10,6 +10,7 @@ import { GetStaticProps } from "next";
 const metadata = {
   title: "Blog | mthteo.xyz",
   description: "Blog for Melvin Teo's personal site",
+  image: "https://mthteo-xyz.vercel.app/meta-image.png",
 };
 
 export default function Home({
@@ -27,18 +28,18 @@ export default function Home({
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
-        {/* <meta name="image" content={metadata.image} /> */}
+        <meta name="image" content={metadata.image} />
 
         <meta property="og:url" content="https://mthteo-xyz.vercel.app" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
-        {/* <meta property="og:image" content={metadata.image} /> */}
+        <meta property="og:image" content={metadata.image} />
 
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
-        {/* <meta name="twitter:image" content={metadata.image} /> */}
+        <meta name="twitter:image" content={metadata.image} />
         <link rel="icon" href="/favicon.svg" />
       </Head>
       <section
