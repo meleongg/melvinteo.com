@@ -3,6 +3,7 @@ import Link from "next/link";
 import NavBar from "./navbar";
 import Footer from "./footer";
 import { useState, useEffect } from "react";
+import { useTheme } from "next-themes";
 
 export default function Layout({
   children,
@@ -12,6 +13,7 @@ export default function Layout({
   main?: boolean;
 }) {
   const [mounted, setMounted] = useState(false);
+  const { resolvedTheme, setTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -24,7 +26,7 @@ export default function Layout({
   return (
     <div className={`${styles.container}`}>
       <header>
-        <NavBar />
+        <NavBar theme={resolvedTheme} setTheme={setTheme} />
       </header>
       <main>{children}</main>
       {!main && (
