@@ -2,6 +2,7 @@ import styles from "../styles/layout.module.css";
 import Link from "next/link";
 import NavBar from "./navbar";
 import Footer from "./footer";
+import { useState, useEffect } from "react";
 
 export default function Layout({
   children,
@@ -10,6 +11,16 @@ export default function Layout({
   children: React.ReactNode;
   main?: boolean;
 }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <div className={`${styles.container}`}>
       <header>

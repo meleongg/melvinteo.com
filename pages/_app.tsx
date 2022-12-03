@@ -28,7 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
   }, [router.events]);
 
   return (
-    <ThemeProvider enableSystem={false}>
+    <ThemeProvider>
       <Component {...pageProps} />
     </ThemeProvider>
   );

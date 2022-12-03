@@ -6,7 +6,7 @@ import utilStyles from "../styles/utils.module.css";
 import { useTheme } from "next-themes";
 
 export default function NavBar() {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, setTheme } = useTheme();
 
   return (
     <nav className={`${navbarStyles.nav}`}>
@@ -34,9 +34,9 @@ export default function NavBar() {
       </ul>
       <FontAwesomeIcon
         className={navbarStyles.mode}
-        icon={theme == "dark" ? faMoon : faSun}
+        icon={resolvedTheme == "dark" ? faMoon : faSun}
         onClick={() =>
-          theme == "dark" ? setTheme("light") : setTheme("dark")
+          resolvedTheme == "dark" ? setTheme("light") : setTheme("dark")
         }
       />
     </nav>
