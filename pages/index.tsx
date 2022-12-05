@@ -39,7 +39,7 @@ export default function Home({
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.image} />
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <section>
         <div className={`${indexStyles.intro} ${utilStyles.headingXl}`}>

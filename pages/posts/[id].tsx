@@ -38,7 +38,7 @@ export default function Post({
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
         <meta name="twitter:image" content={metadata.image} />
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <article className={postStyles.article}>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
