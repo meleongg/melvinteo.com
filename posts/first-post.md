@@ -12,6 +12,8 @@ When I first started learning about Web Development, my [old website](https://me
 
 ![A screenshot of my old website](/post-assets/old-site.png)
 
+<!-- A screen shot of my old website -->
+
 **DISCLAIMER**: I am not a designer by any means, but I do use Figma to prototype my site designs before developing. 
 
 But the logic powering the site on the other hand, was *interesting*, to put lightly, considering that all the site content was contained in a single HTML file and styled by an equally massive CSS stylesheet. 🥲
