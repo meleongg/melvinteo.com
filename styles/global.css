@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
 html,
 body {
@@ -8,10 +8,10 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   line-height: 1.6;
   font-size: 18px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   overflow-y: overlay;
-  background: #EFEFEF;
-  color: #22374F;
+  background: #efefef;
+  color: #22374f;
 }
 
 * {
@@ -32,5 +32,9 @@ img {
 
 [data-theme="dark"] body {
   background: #333;
-  color: #FFF;  
+  color: #fff;
+}
+
+blockquote {
+  font-style: italic;
 }
