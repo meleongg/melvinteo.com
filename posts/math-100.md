@@ -16,7 +16,7 @@ tags: "School"
 
 ### Structure:
 
-MATH 100 was split into several topics that were introduced on a weekly basis. There were weekly problem sets called WebWorks that were assigned each week through an online platform called WebWork. The WebWorks usually consisted of ~18-20 questions of varying difficulty - some were no-brainers while others required the use of external software to compute solutions. It would usually take me ~6-8 hours to complete the WebWork assignments. Halfway through the course, there was a midterm of just above medium difficulty but not impossible. The final exam was also of similar difficulty. 
+MATH 100 was split into several topics that were introduced on a weekly basis. There were weekly problem sets called WebWorks that were assigned each week through an online platform called WebWork. The WebWorks usually consisted of ~18-20 questions of varying difficulty - some were no-brainers while others required the use of external software to compute solutions. It would usually take me ~6-8 hours to complete the WebWork assignments. (Checkout my WebWork Traffic Light Strategy [here](https://mthteo-xyz.vercel.app/posts/traffic-light-strategy)!) Halfway through the course, there was a midterm of just above medium difficulty but not impossible. The final exam was also of similar difficulty. 
 
 ### Key Concepts:
 
