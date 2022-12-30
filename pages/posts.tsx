@@ -8,7 +8,7 @@ import { getSortedPostsData } from "../lib/posts";
 import { GetStaticProps } from "next";
 
 const metadata = {
-  title: "Blog | mthteo.xyz",
+  title: "Blog | Melvin Teo",
   description: "Blog for Melvin Teo's personal site",
   image: "https://mthteo-xyz.vercel.app/meta-image.png",
 };

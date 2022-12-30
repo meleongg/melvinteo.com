@@ -4,7 +4,7 @@ import experienceStyles from "../styles/experiences.module.css";
 import Head from "next/head";
 
 const metadata = {
-  title: "Experience | mthteo.xyz",
+  title: "Experience | Melvin Teo",
   description: "Experience page of Melvin Teo's personal site",
   image: "https://mthteo-xyz.vercel.app/meta-image.png",
 };

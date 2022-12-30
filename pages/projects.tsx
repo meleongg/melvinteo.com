@@ -5,7 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 const metadata = {
-  title: "Projects | mthteo.xyz",
+  title: "Projects | Melvin Teo",
   description: "Project page of Melvin Teo's personal site",
   image: "https://mthteo-xyz.vercel.app/meta-image.png",
 };

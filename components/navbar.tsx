@@ -15,7 +15,7 @@ export default function NavBar({
     <nav className={`${navbarStyles.nav}`}>
       <div className={navbarStyles.logo}>
         <Link className={utilStyles.link} href="/">
-          mthteo.xyz
+          melvin teo
         </Link>
       </div>
       <ul className={`${navbarStyles.navLinks}`}>

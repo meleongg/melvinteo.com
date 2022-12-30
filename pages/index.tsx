@@ -8,7 +8,7 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 
 const metadata = {
-  title: "Home | mthteo.xyz",
+  title: "Home | Melvin Teo",
   description: "Homepage of Melvin Teo's personal site",
   image: "https://mthteo-xyz.vercel.app/meta-image.png",
 };
@@ -50,9 +50,10 @@ export default function Home({
                 "Melvin Teo",
                 "a 2nd-year UBC CS student",
                 "a software dev",
+                "a hackathon organizer",
                 "a volleyball addict",
                 "an aspiring guitarist",
-                "a non-coffee drinker :)",
+                "not a caffeine addict",
               ],
               autoStart: true,
               loop: true,
