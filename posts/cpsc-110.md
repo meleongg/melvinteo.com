@@ -1,6 +1,6 @@
 ---
 title: "CPSC 110 Course Review"
-date: "2022-12-29"
+date: "2022-12-28"
 tags: "School"
 ---
 
@@ -26,13 +26,13 @@ Another big aspect of this course is that most non-exam assessments are autograd
 
 ### Key Concepts:
 
-Dr Racket and Racket: Dr Racket is the IDE you'll be writing Racket syntax with.
+**Dr Racket and Racket**: Dr Racket is the IDE you'll be writing Racket syntax with.
 
-Design Recipes: Common design recipes (i.e. coding patterns) specific to CPSC 110 (HtDF, HtDD, HtDW).
+**Design Recipes**: Common design recipes (i.e. coding patterns) specific to CPSC 110 (HtDF, HtDD, HtDW).
 
-Natural and Generative Recursion: Perform repeated functions on two different types of trees, Binary and Arbitrary Arity Trees.
+**Natural and Generative Recursion**: Perform repeated functions on two different types of trees, Binary and Arbitrary Arity Trees.
 
-Search: Performing search tasks on trees and graph data structures. Arguably the most difficult concept of this course.
+**Search**: Performing search tasks on trees and graph data structures. Arguably the most difficult concept of this course.
 
 ### Final Thoughts:
 

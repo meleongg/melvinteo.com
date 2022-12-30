@@ -52,4 +52,4 @@ The Traffic Light Strategy is something I’m glad I stumbled upon, but it came 
 
 I hope the Traffic Light Strategy proves itself useful.
 
-A plethora of Webwork Greens awaits you!
+A plethora of WebWork Greens awaits you!
