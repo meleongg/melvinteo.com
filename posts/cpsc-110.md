@@ -12,7 +12,7 @@ tags: "School"
 
 ### Instructor: Gregor Kiczales
 
-[Gregor](https://www.ratemyprofessors.com/professor?tid=38077) is the most iconic professor on the CPSC 110 teaching team. You will see Gregor everywhere throughout this course and internalize his golden nuggets of advice. Overall, Gregor is a kind and encouraging professor who will provide assistance to a certain degree, such that the student is still doing most of the heavy lifting. However, Gregor can sometimes come across as a little aggressive and harsh when answering student questions during a time crunch.
+[Gregor](https://www.ratemyprofessors.com/professor?tid=38077) was the most iconic professor on the CPSC 110 teaching team. Gregor was everywhere throughout this course and I quickly learned to internalize his golden nuggets of advice. Overall, Gregor was a kind and encouraging professor who provided assistance to a certain degree, such that the student was still doing most of the heavy lifting. However, Gregor sometimes came across as a little aggressive and harsh when answering student questions during a time crunch.
 
 ### Structure:
 
@@ -36,7 +36,7 @@ Another big aspect of this course is that most non-exam assessments are autograd
 
 ### Final Thoughts:
 
-Coming from a background working with higher-level programming languages, learning Racket syntax was a little tedious due to its unique syntax. However, for those looking to pursue Computer Science, CPSC 110 introduces foundational CS concepts (tree traversals, graphs, etc.) that you will revisit in later courses, in other programming languages of course. All in all, CPSC 110 was a fair course that was rewarding given that you put in a corresponding amount of effort.
+Coming from a background working with higher-level programming languages, learning Racket syntax was a little tedious due to its unique syntax. However, for those looking to pursue Computer Science, CPSC 110 introduces foundational CS concepts (tree traversals, graphs, etc.) that you will revisit in later courses using other programming languages. All in all, CPSC 110 was a fair course that was rewarding given that you put in a corresponding amount of effort.
 
 ### Main Resources:
 - [Main CPSC 110 Page](https://cs110.students.cs.ubc.ca/admin/syllabus.html#welcome)
