@@ -16,7 +16,7 @@ export default function Post({
   };
 }) {
   const metadata = {
-    title: `${postData.title} | mthteo.xyz`,
+    title: `${postData.title} | Melvin Teo`,
     description: `Blog post with title: ${postData.title} for Melvin Teo's personal site`,
     image: "https://mthteo-xyz.vercel.app/meta-image.png",
   };
