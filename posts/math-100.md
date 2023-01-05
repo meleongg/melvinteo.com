@@ -20,13 +20,13 @@ MATH 100 was split into several topics that were introduced on a weekly basis. T
 
 ### Key Concepts:
 
-**Limits**: The relationship between limits and derivatives. Limit laws.
+**Limits:** The relationship between limits and derivatives. Limit laws.
 
-**Derivatives**: The relationship between tangent lines and derivatives. Product, Quotient, and Chain Rules. 
+**Derivatives:** The relationship between tangent lines and derivatives. Product, Quotient, and Chain Rules. 
 
-**Applications of Derivatives**: A variety of real-world word problems that require the use of derivatives, such as Optimization, Growth & Decay, etc. 
+**Applications of Derivatives:** A variety of real-world word problems that require the use of derivatives, such as Optimization, Growth & Decay, etc. 
 
-**Taylor Polynomials**: Approximating a function using the derivatives of a bunch of other polynomials. 
+**Taylor Polynomials:** Approximating a function using the derivatives of a bunch of other polynomials. 
 
 ### Final Thoughts:
 

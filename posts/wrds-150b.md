@@ -20,9 +20,9 @@ For WRDS 150B, the topics varied from section to section, but my particular sect
 
 ### Key Concepts:
 
-**Reading Scholarly Writing**: How to quickly read scholarly articles and capture the main research question(s), goals, and outcomes.
+**Reading Scholarly Writing:** How to quickly read scholarly articles and capture the main research question(s), goals, and outcomes.
 
-**Producing Scholarly Writing**: How to effectively convey research findings to a specific target audience.
+**Producing Scholarly Writing:** How to effectively convey research findings to a specific target audience.
 
 ### Final Thoughts:
 

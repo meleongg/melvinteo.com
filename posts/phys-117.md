@@ -26,11 +26,11 @@ Throughout the semester, there were 10 Reading Quizzes, with the lowest two drop
 
 ### Key Concepts:
 
-**Kinematics**: 2D and 3D Kinematics involving velocity, time, distance, and acceleration. 
+**Kinematics:** 2D and 3D Kinematics involving velocity, time, distance, and acceleration. 
 
-**Forces**: How forces such as friction force, spring force, normal force, etc. act on an object and contribute to the net force. 
+**Forces:** How forces such as friction force, spring force, normal force, etc. act on an object and contribute to the net force. 
 
-**Energy**: The conservation of energy, the work-energy theorem, and energy transfer in collisions. 
+**Energy:** The conservation of energy, the work-energy theorem, and energy transfer in collisions. 
 
 **Waves:** Interpreting information from a wave graph representing oscillations. 
 
