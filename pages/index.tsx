@@ -99,7 +99,7 @@ export default function Home({
                 target="_blank"
               >
                 nwPlus
-              </Link>{" "}
+              </Link>,{" "}
               biking around Vancouver, playing volleyball, learning world
               languages, strumming a guitar, or hanging out with friends &
               family. I also sometimes{" "}
@@ -126,10 +126,10 @@ export default function Home({
           <Image
             priority
             src="/images/profile.jpg"
-            height={330}
+            height={450}
             className={`${utilStyles.borderCircle}`}
-            width={250}
-            alt="headshot of the author, Melvin Teo"
+            width={300}
+            alt="headshot of Melvin Teo"
           />
         </div>
       </section>

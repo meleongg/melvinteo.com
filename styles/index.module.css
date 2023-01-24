@@ -18,7 +18,7 @@
   display: grid; 
   justify-items: center;
   align-items: center;
-  grid-template-columns: 1fr 250px;
+  grid-template-columns: 1fr 300px;
   /* 100vh - 80px (navbar) - 3rem (top) - 2rem(bottom) - 70px (intro) - 40px (intro-bottom) - 110px (footer) */
   min-height: calc(100vh - 80px - 3rem - 2rem - 70px - 40px - 110px);
   width: 100%;
@@ -40,7 +40,7 @@
   .introData {
     padding-top: 20px;
     grid-template-columns: 1fr;
-    grid-template-rows: 350px 1fr;
+    grid-template-rows: 500px 1fr;
     row-gap: 20px;
   }
 
