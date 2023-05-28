@@ -2,37 +2,38 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  line-height: 1.6;
-  font-size: 18px;
-  font-family: "Poppins", sans-serif;
-  overflow-y: overlay;
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    line-height: 1.6;
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    overflow-y: overlay;
 }
 
 * {
-  box-sizing: border-box;
-  /* border: 1px solid red; */
+    box-sizing: border-box;
+    /* border: 1px solid red; */
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 img {
-  max-width: 100%;
-  display: block;
-  margin: 0 auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: auto;
 }
 
 [data-theme="dark"] body {
-  background: #333;
-  color: #fff;
+    background: #333;
+    color: #fff;
 }
 
 blockquote {
-  font-style: italic;
+    font-style: italic;
 }
