@@ -47,7 +47,7 @@ export default function () {
                         <div className={experienceStyles.experienceData}>
                             <h3 className={utilStyles.headingLg}>Amazon</h3>
                             <h3 className={utilStyles.headingMd}>SDE Intern</h3>
-                            <p>May 2023 - Present</p>
+                            <p>May 2023 - Aug 2023</p>
                             <p>
                                 I accepted a return offer from my summer 2022
                                 internship and will be interning on the Prime
@@ -57,11 +57,51 @@ export default function () {
                                 className={`${experienceStyles.responsibilities} ${utilStyles.listItem}`}
                             >
                                 <li>
-                                    Optimizing the Amazon Prime membership
+                                    Optimized the Amazon Prime membership
                                     cancellation flow for over{" "}
                                     <b>200 million</b> Prime customers
                                 </li>
+                                <li>
+                                    Updated configurations for <b>4</b> services
+                                    serving the cancellation flow to ensure
+                                    marketplace expansion compatibility
+                                </li>
+                                <li>
+                                    Refactored codebase for{" "}
+                                    <b>AWS CloudWatch</b>
+                                    dashboards and alarms monitoring worldwide
+                                    cancellation flow traffic
+                                </li>
+                                <li>
+                                    Developed a Cookie Override feature to
+                                    optimize QA A/B testing for customer
+                                    experiences, saving <b>15 mins</b> per test
+                                </li>
                             </ul>
+
+                            <div
+                                className={`${experienceStyles.technologies} ${utilStyles.listItem}`}
+                            >
+                                <span
+                                    className={experienceStyles.technologySpan}
+                                >
+                                    <small
+                                        className={experienceStyles.technology}
+                                    >
+                                        Java
+                                    </small>
+                                    <small
+                                        className={experienceStyles.technology}
+                                    >
+                                        TypeScript
+                                    </small>
+                                    <small
+                                        className={experienceStyles.technology}
+                                    >
+                                        AWS
+                                    </small>
+                                </span>
+                            </div>
 
                             <h3 className={utilStyles.headingMd}>
                                 Amazon Future Engineer Intern
@@ -98,11 +138,6 @@ export default function () {
                                     monitor features related to Prime membership
                                     Pause & Resume.
                                 </li>
-                                <li>
-                                    Researched and drove a design document for
-                                    content translations automation, including a
-                                    pros & cons analysis of two main options.
-                                </li>
                             </ul>
                             <div
                                 className={`${experienceStyles.technologies} ${utilStyles.listItem}`}
@@ -118,12 +153,12 @@ export default function () {
                                     <small
                                         className={experienceStyles.technology}
                                     >
-                                        AWS TypeScript CDK
+                                        TypeScript
                                     </small>
                                     <small
                                         className={experienceStyles.technology}
                                     >
-                                        AWS CloudWatch
+                                        AWS
                                     </small>
                                     <small
                                         className={experienceStyles.technology}
