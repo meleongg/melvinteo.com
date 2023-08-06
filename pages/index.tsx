@@ -73,15 +73,11 @@ export default function Home({
                 </div>
                 <div className={indexStyles.introData}>
                     <div className={indexStyles.introDataText}>
+                        <p>Welcome to my digital journal and playground!</p>
                         <p>
-                            Welcome to my playground of thought and randomness.
-                            Feel free to click around to learn more about me!
-                        </p>
-                        <p>
-                            As an aspiring Full-Stack Engineer, I'm passionate
-                            about crafting creative solutions for challenging
-                            problems. I've recently been learning the MERN stack
-                            through
+                            I'm an aspiring Software Engineer passionate about{" "}
+                            <b>productivity & time-saving</b> tech! I've been
+                            honing my Full-Stack Development skills through
                             <Link
                                 className={`${utilStyles.altText} ${utilStyles.link}`}
                                 href="/projects"
@@ -89,8 +85,8 @@ export default function Home({
                                 {" "}
                                 personal projects
                             </Link>
-                            , and I've closely collaborated with others through
-                            my
+                            , and I've collaborated with designers, PMs, and
+                            developers through my
                             <Link
                                 className={`${utilStyles.altText} ${utilStyles.link}`}
                                 href="/experiences"
@@ -98,10 +94,10 @@ export default function Home({
                                 {" "}
                                 work experience{" "}
                             </Link>
-                            and participating in hackathons.
+                            and hackathon adventures.
                         </p>
                         <p>
-                            In my spare time, you can find me organizing some
+                            In my free time, you can find me organizing some
                             awesome events at{" "}
                             <Link
                                 className={`${utilStyles.altText} ${utilStyles.link}`}
@@ -110,17 +106,16 @@ export default function Home({
                             >
                                 nwPlus
                             </Link>
-                            , biking around Vancouver, playing volleyball,
-                            learning world languages, strumming a guitar, or
-                            spending time with friends & family. I also
-                            sometimes{" "}
+                            , playing volleyball, learning foreign languages,
+                            strumming a guitar, or spending time with friends &
+                            family. I also sometimes{" "}
                             <Link
                                 className={`${utilStyles.altText} ${utilStyles.link}`}
                                 href="/posts"
                             >
                                 write
                             </Link>{" "}
-                            to clear my mind.
+                            what's on my mind.
                         </p>
                         <p>
                             Here's my{" "}
@@ -130,8 +125,8 @@ export default function Home({
                                 target="_blank"
                             >
                                 resume
-                            </Link>
-                            , if that interests you!
+                            </Link>{" "}
+                            if that interests you!
                         </p>
                     </div>
                     <Image
