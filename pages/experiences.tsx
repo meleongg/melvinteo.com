@@ -50,21 +50,22 @@ export default function () {
                             <p>May 2023 - Aug 2023</p>
                             <p>
                                 I accepted a return offer from my summer 2022
-                                internship and will be interning on the Prime
-                                VRCW team.
+                                AFE internship and interned on the Prime
+                                Voluntary Churn Reduction and Winback (VRCW)
+                                team under a new manager.
                             </p>
                             <ul
                                 className={`${experienceStyles.responsibilities} ${utilStyles.listItem}`}
                             >
                                 <li>
-                                    Optimized the Amazon Prime membership
-                                    cancellation flow for over{" "}
-                                    <b>200 million</b> Prime customers
+                                    Optimized the <b>Prime</b> membership
+                                    cancellation flow for <b>millions</b> of
+                                    customers from a 3-page to 2-page flow
                                 </li>
                                 <li>
-                                    Updated configurations for <b>4</b> services
-                                    serving the cancellation flow to ensure
-                                    marketplace expansion compatibility
+                                    Ensured marketplace expansion compatibility
+                                    for the main cancellation flow service and{" "}
+                                    <b>4</b> downstream services
                                 </li>
                                 <li>
                                     Refactored codebase for{" "}
@@ -73,9 +74,10 @@ export default function () {
                                     cancellation flow traffic
                                 </li>
                                 <li>
-                                    Developed a Cookie Override feature to
-                                    optimize QA A/B testing for customer
-                                    experiences, saving <b>15 mins</b> per test
+                                    Developed a Web Cookie Override feature to
+                                    optimize <b>QA A/B testing</b> for customer
+                                    experiences, saving <b>15 mins/test</b> for
+                                    hundreds of tests
                                 </li>
                             </ul>
 
@@ -116,27 +118,24 @@ export default function () {
                                 className={`${experienceStyles.responsibilities} ${utilStyles.listItem}`}
                             >
                                 <li>
-                                    Implemented <b>customer-facing</b> features
-                                    related to a Pause & Resume membership state
-                                    for millions of worldwide Amazon Prime
-                                    customers, helping to retain tens of
-                                    thousands of customers annually.
+                                    Implemented customer-facing <b>Prime</b>{" "}
+                                    membership pause & resume features (e.g.
+                                    emails, page widgets) for <b>millions</b> of
+                                    worldwide customers, helping to retain tens
+                                    of thousands of customers annually
                                 </li>
                                 <li>
-                                    Wrote <b>10+</b> automation scripts to
-                                    implement <b>11</b> features (e.g. customer
-                                    emails, risk message widgets, etc.) across{" "}
-                                    <b>14</b> countries, reducing expected
-                                    development time from 1.6 years to 0.7
-                                    years, a <b>49%</b> time and <b>43%</b> cost
-                                    reduction.
+                                    Automated feature implementation across{" "}
+                                    <b>14</b>
+                                    countries using Bash scripts, reducing
+                                    development time by <b>49%</b> and costs by{" "}
+                                    <b>43%</b>
                                 </li>
                                 <li>
-                                    Created and deployed <b>10</b> AWS
-                                    CloudWatch Metrics Widgets and <b>20</b>{" "}
-                                    Alarms using an AWS TypeScript CDK to
-                                    monitor features related to Prime membership
-                                    Pause & Resume.
+                                    Created and deployed{" "}
+                                    <b>10 AWS CloudWatch</b>
+                                    dashboards and <b>20</b> alarms to monitor
+                                    worldwide pause and resume traffic
                                 </li>
                             </ul>
                             <div

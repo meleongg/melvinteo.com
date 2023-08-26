@@ -121,7 +121,7 @@ export default function Home({
                             Here's my{" "}
                             <Link
                                 className={`${utilStyles.altText} ${utilStyles.link}`}
-                                href="/Melvin_Teo.pdf"
+                                href="/Melvin_Teo_resume.pdf"
                                 target="_blank"
                             >
                                 resume
