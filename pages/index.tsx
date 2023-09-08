@@ -76,7 +76,7 @@ export default function Home({
                         <p>Welcome to my digital journal and playground!</p>
                         <p>
                             I'm an aspiring Software Engineer passionate about{" "}
-                            <b>productivity & time-saving</b> tech! I've been
+                            <b>productivity & organization</b> tech! I've been
                             honing my Full-Stack Development skills through
                             <Link
                                 className={`${utilStyles.altText} ${utilStyles.link}`}
