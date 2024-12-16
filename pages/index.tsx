@@ -42,13 +42,13 @@ export default function Home({
       </Head>
       <section>
         <div className={`${indexStyles.intro} ${utilStyles.headingXl}`}>
-          <span>hi friend, I'm</span>
+          <span>Hello there, I'm</span>
           <Typewriter
             options={{
               strings: [
                 "Melvin Teo",
                 "a 4th-year UBC CS student",
-                "a software dev",
+                "a full-stack dev",
                 "a hackathon organizer",
                 "a volleyball addict",
                 "a london fog enthusiast",
@@ -62,9 +62,8 @@ export default function Home({
         </div>
         <div className={indexStyles.introData}>
           <div className={indexStyles.introDataText}>
-            <p>Welcome to my digital journal and playground!</p>
             <p>
-              I'm an aspiring Software Engineer passionate about{" "}
+              I'm a Software Engineer passionate about{" "}
               <b>productivity & organization</b> tech! I've been honing my
               Full-Stack Development skills through
               <Link
@@ -83,10 +82,10 @@ export default function Home({
                 {" "}
                 work experience{" "}
               </Link>
-              and hackathon adventures!
+              and participating in hackathons!
             </p>
             <p>
-              In my free time, you can find me organizing some awesome events at{" "}
+              In my free time, you can find me community-building with{" "}
               <Link
                 className={`${utilStyles.altText} ${utilStyles.link}`}
                 href="https://www.nwplus.io"
@@ -112,8 +111,8 @@ export default function Home({
                 target="_blank"
               >
                 resume
-              </Link>{" "}
-              if that interests you!
+              </Link>
+              !
             </p>
           </div>
           <Image
