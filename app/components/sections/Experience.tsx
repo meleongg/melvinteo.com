@@ -10,6 +10,32 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
+    company: "Amazon",
+    position: "Software Engineer",
+    period: "Jun. 2026 - Present",
+    description: [],
+  },
+  {
+    company: "Co-Founder",
+    position: "Spoddr",
+    period: "Sept. 2025 - Apr. 2026",
+    description: [
+      "Co-founded a social fitness platform as a team of 6 (2 Software Engineers, 1 Hardware Engineer, 1 Product Manager, 1 Finance, 1 Marketing) from initial customer discovery and validation to full-stack MVP launch",
+      "Architected the core mobile-web client (Expo), SQL database schemas, FastAPI business logic, and BLE/Arduino hardware integration to automate rep/weight tracking and eliminate manual logging friction",
+      "Engineered the AWS cloud infrastructure (ECS, RDS, Cognito) and observability stack (CloudWatch)",
+    ],
+  },
+  {
+    company: "The University of British Columbia",
+    position: "Undergraduate Student Researcher",
+    period: "Sept. 2025 - Apr. 2026",
+    description: [
+      "Designed and trained a Sparse Autoencoder (SAE) to map and disentangle latent representations of a 70M-parameter transformer model, achieving an 93\%+ reconstruction score (R²) on a 600K-token dataset",
+      "Built an ETL pipeline to aggregate, clean, and resolve conflicting schemas across disparate NLP data sources (Universal Dependencies, WordNet, VerbNet, Wiktionary) into a unified sparse matrix",
+      "Presented research abstract at both the Language Sciences and CS Student Research Conferences",
+    ],
+  },
+  {
     company: "Amazon Payments",
     position: "Software Engineer Intern",
     period: "May - Aug. 2025",
@@ -67,7 +93,7 @@ export function Experience() {
     <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
       <div className="max-w-4xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-primary-light dark:text-white mb-12">
-          Work Experience
+          Experience
         </h2>
         <div className="space-y-12">
           {experiences.map((exp, index) => (
