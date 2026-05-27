@@ -15,7 +15,7 @@ export function Header() {
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
-    href: string
+    href: string,
   ) => {
     e.preventDefault();
     setMobileMenuOpen(false);

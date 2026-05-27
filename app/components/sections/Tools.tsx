@@ -1,83 +1,138 @@
 "use client";
 import { motion } from "framer-motion";
-import Image from "next/image";
+import { DiAws, DiJava } from "react-icons/di";
+import type { IconType } from "react-icons/lib";
+import {
+  SiC,
+  SiCplusplus,
+  SiCss,
+  SiDocker,
+  SiExpo,
+  SiExpress,
+  SiFastapi,
+  SiFirebase,
+  SiGit,
+  SiGithubactions,
+  SiGo,
+  SiHuggingface,
+  SiHtml5,
+  SiJavascript,
+  SiMongodb,
+  SiMysql,
+  SiNodedotjs,
+  SiNumpy,
+  SiPytorch,
+  SiPython,
+  SiRailway,
+  SiReact,
+  SiScikitlearn,
+  SiSpacy,
+  SiSupabase,
+  SiTypescript,
+  SiVercel,
+} from "react-icons/si";
 
-const toolCategories = [
+interface Tool {
+  name: string;
+  icon: IconType;
+}
+
+interface ToolCategory {
+  category: string;
+  tools: Tool[];
+}
+
+function ToolIcon({ tool }: { tool: Tool }) {
+  const Icon = tool.icon;
+  return (
+    <Icon
+      size={38}
+      aria-label={tool.name}
+      className="text-gray-700 dark:text-gray-200"
+    />
+  );
+}
+
+const toolCategories: ToolCategory[] = [
   {
     category: "Languages",
     tools: [
       {
+        name: "Python",
+        icon: SiPython,
+      },
+      {
         name: "TypeScript",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
+        icon: SiTypescript,
       },
       {
         name: "JavaScript",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-      },
-      {
-        name: "Python",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+        icon: SiJavascript,
       },
       {
         name: "Java",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+        icon: DiJava,
       },
       {
         name: "Go",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg",
+        icon: SiGo,
       },
       {
         name: "C",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg",
+        icon: SiC,
       },
       {
         name: "C++",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
+        icon: SiCplusplus,
       },
       {
         name: "SQL",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg",
+        icon: SiMysql,
       },
       {
         name: "HTML5",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
+        icon: SiHtml5,
       },
       {
         name: "CSS3",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
+        icon: SiCss,
       },
     ],
   },
   {
-    category: "Frameworks",
+    category: "Frameworks & Databases",
     tools: [
       {
         name: "React",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        icon: SiReact,
       },
       {
-        name: "Express",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
-      },
-      {
-        name: "Node.js",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+        name: "Expo (React Native)",
+        icon: SiExpo,
       },
       {
         name: "FastAPI",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
+        icon: SiFastapi,
       },
       {
-        name: "Firebase",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
+        name: "Express",
+        icon: SiExpress,
+      },
+      {
+        name: "Node.js",
+        icon: SiNodedotjs,
       },
       {
         name: "Supabase",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
+        icon: SiSupabase,
       },
       {
         name: "MongoDB",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+        icon: SiMongodb,
+      },
+      {
+        name: "Firebase",
+        icon: SiFirebase,
       },
     ],
   },
@@ -86,19 +141,27 @@ const toolCategories = [
     tools: [
       {
         name: "AWS",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg",
+        icon: DiAws,
       },
       {
-        name: "Git",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
+        name: "Railway",
+        icon: SiRailway,
+      },
+      {
+        name: "Vercel",
+        icon: SiVercel,
       },
       {
         name: "Docker",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+        icon: SiDocker,
+      },
+      {
+        name: "Git",
+        icon: SiGit,
       },
       {
         name: "GitHub Actions",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
+        icon: SiGithubactions,
       },
     ],
   },
@@ -106,12 +169,24 @@ const toolCategories = [
     category: "Libraries",
     tools: [
       {
-        name: "NumPy",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg",
+        name: "PyTorch",
+        icon: SiPytorch,
       },
       {
-        name: "Matplotlib",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg",
+        name: "Transformers (HF)",
+        icon: SiHuggingface,
+      },
+      {
+        name: "Scikit-learn",
+        icon: SiScikitlearn,
+      },
+      {
+        name: "spaCy",
+        icon: SiSpacy,
+      },
+      {
+        name: "NumPy",
+        icon: SiNumpy,
       },
     ],
   },
@@ -149,13 +224,7 @@ export function Tools() {
                     }}
                     className="group relative flex items-center justify-center p-3 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-110"
                   >
-                    <Image
-                      src={tool.logo}
-                      alt={tool.name}
-                      width={40}
-                      height={40}
-                      className="w-10 h-10 object-contain filter dark:brightness-90"
-                    />
+                    <ToolIcon tool={tool} />
                     {/* Tooltip */}
                     <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
                       {tool.name}

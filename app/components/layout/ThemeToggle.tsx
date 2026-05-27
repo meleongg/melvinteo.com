@@ -13,7 +13,7 @@ export function ThemeToggle() {
     const storedTheme = localStorage.getItem("theme");
     // Then check OS preference
     const prefersDark = window.matchMedia(
-      "(prefers-color-scheme: dark)"
+      "(prefers-color-scheme: dark)",
     ).matches;
     if (storedTheme === "dark" || (!storedTheme && prefersDark)) {
       setTheme("dark");

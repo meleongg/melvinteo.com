@@ -5,6 +5,36 @@ import Image from "next/image";
 
 const projects = [
   {
+    title: "Stamped",
+    description:
+      "AI-powered language learning app with smart flashcards, translations, and personalized example sentences.",
+    technologies: [
+      "Next.js",
+      "NeonDB",
+      "Tailwind CSS",
+      "TypeScript",
+      "FastAPI",
+    ],
+    github: "https://github.com/meleongg/flashcard-frontend",
+    live: "https://flashcard-frontend-one.vercel.app/",
+    image: "/images/flashlearn.png",
+  },
+  {
+    title: "ChefPath",
+    description:
+      "AI-powered language learning app with smart flashcards, translations, and personalized example sentences.",
+    technologies: [
+      "Next.js",
+      "NeonDB",
+      "Tailwind CSS",
+      "TypeScript",
+      "FastAPI",
+    ],
+    github: "https://github.com/meleongg/flashcard-frontend",
+    live: "https://flashcard-frontend-one.vercel.app/",
+    image: "/images/flashlearn.png",
+  },
+  {
     title: "Flashlearn",
     description:
       "AI-powered language learning app with smart flashcards, translations, and personalized example sentences.",
@@ -89,7 +119,7 @@ export function Projects() {
     <section id="projects" className="py-20">
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-primary-light dark:text-white mb-12">
-          Personal Projects
+          Projects
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
