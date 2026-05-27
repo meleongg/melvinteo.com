@@ -1,38 +1,42 @@
 "use client";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import Image from "next/image";
+import { FaGithub } from "react-icons/fa";
 
 const projects = [
   {
     title: "Stamped",
     description:
-      "AI-powered language learning app with smart flashcards, translations, and personalized example sentences.",
+      "Track your travels on an interactive world map, then share and compare maps with friends.",
     technologies: [
       "Next.js",
-      "NeonDB",
-      "Tailwind CSS",
+      "React",
       "TypeScript",
-      "FastAPI",
+      "Tailwind CSS",
+      "D3.js",
+      "Vercel Analytics",
     ],
-    github: "https://github.com/meleongg/flashcard-frontend",
-    live: "https://flashcard-frontend-one.vercel.app/",
-    image: "/images/flashlearn.png",
+    github: "https://github.com/meleongg/personal-world-map",
+    live: "https://stamped-travel.vercel.app",
+    image: "/images/stamped.png",
   },
   {
     title: "ChefPath",
     description:
-      "AI-powered language learning app with smart flashcards, translations, and personalized example sentences.",
+      "AI-powered cooking mentor that generates adaptive weekly meal plans, guides step-by-step cooking, and personalizes future recipes from your feedback.",
     technologies: [
       "Next.js",
-      "NeonDB",
-      "Tailwind CSS",
       "TypeScript",
+      "Tailwind CSS",
       "FastAPI",
+      "PostgreSQL (Supabase)",
+      "SQLAlchemy",
+      "LangChain/LangGraph",
     ],
-    github: "https://github.com/meleongg/flashcard-frontend",
-    live: "https://flashcard-frontend-one.vercel.app/",
-    image: "/images/flashlearn.png",
+    github: "https://github.com/meleongg/chef-path",
+    live: "https://chefpath.vercel.app",
+    image: "/images/chefpath.png",
   },
   {
     title: "Flashlearn",
@@ -129,41 +133,43 @@ export function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.2 }}
-              className="bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={800}
-                height={384}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6 grid gap-y-2 md:gap-y-1 items-center min-h-96 md:min-h-0">
-                <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-2 h-10">
+              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-5 sm:p-6">
+                <h3 className="mb-2 text-xl font-bold text-gray-800 dark:text-white">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300 mb-4 h-20">
+                <p className="mb-4 text-sm leading-relaxed text-gray-600 dark:text-gray-300 sm:text-base">
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2 mb-4 h-10 place-items-center">
+                <div className="mb-5 flex flex-wrap gap-2">
                   {project.technologies.map((tech: string) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 rounded-full text-sm"
+                      className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600 dark:bg-gray-700 dark:text-gray-300 sm:text-sm"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
-                <div className="flex gap-4 h-10">
+                <div className="mt-auto flex flex-wrap gap-3">
                   {project.github && (
                     <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-white"
+                      className="inline-flex items-center gap-2 rounded-md border border-gray-200 px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:border-gray-300 hover:text-primary-light dark:border-gray-600 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:text-white"
                     >
-                      <Github size={20} />
+                      <FaGithub size={18} />
                       <span>Code</span>
                     </a>
                   )}
@@ -172,9 +178,9 @@ export function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-white"
+                      className="inline-flex items-center gap-2 rounded-md bg-primary-light px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-light/90 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
                     >
-                      <ExternalLink size={20} />
+                      <ExternalLink size={18} />
                       <span>Live Demo</span>
                     </a>
                   )}
