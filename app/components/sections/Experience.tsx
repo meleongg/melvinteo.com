@@ -1,4 +1,9 @@
 "use client";
+import {
+  getRevealMotion,
+  useMotionPrefs,
+  VIEWPORT_ONCE,
+} from "@/app/lib/motion";
 import { motion } from "framer-motion";
 
 interface Experience {
@@ -89,35 +94,37 @@ const experiences: Experience[] = [
 ];
 
 export function Experience() {
+  const { reducedMotion, stagger } = useMotionPrefs();
+
   return (
-    <section id="experience" className="py-20 bg-gray-50 dark:bg-gray-800">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-primary-light dark:text-white mb-12">
-          Experience
-        </h2>
-        <div className="space-y-12">
+    <section id="experience" className="scroll-mt-24 py-20">
+      <div className="mx-auto max-w-6xl px-4">
+        <h2 className="section-heading">Experience</h2>
+        <div className="card-surface space-y-10 p-6 sm:p-8">
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="relative pl-8 border-l-2 border-primary-light dark:border-gray-600"
+              {...getRevealMotion(
+                reducedMotion,
+                stagger(index, 0.06, 0.36),
+                "x",
+              )}
+              viewport={VIEWPORT_ONCE}
+              className="relative border-l-2 border-blue-500/70 pl-8 dark:border-blue-400/60"
             >
-              <div className="absolute w-4 h-4 bg-primary-light dark:bg-gray-600 rounded-full -left-[9px] top-0" />
-              <h3 className="text-xl font-bold text-gray-800 dark:text-white">
+              <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-blue-500 dark:bg-blue-400" />
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl">
                 {exp.position}
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-2">
+              <p className="mb-2 text-gray-700 dark:text-gray-200">
                 {exp.company}
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4">
+              <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
                 {exp.period}
               </p>
-              <div className="text-gray-600 dark:text-gray-300">
+              <div className="text-gray-700 dark:text-gray-200">
                 {Array.isArray(exp.description) ? (
-                  <ul className="list-disc list-inside space-y-1">
+                  <ul className="list-inside list-disc space-y-1.5">
                     {exp.description.map((bullet, bulletIndex) => (
                       <li key={bulletIndex}>{bullet}</li>
                     ))}

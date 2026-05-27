@@ -12,6 +12,7 @@ const navigation = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const mobileMenuId = "mobile-site-navigation";
 
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement>,
@@ -30,11 +31,11 @@ export function Header() {
   };
 
   return (
-    <header className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm z-50">
+    <header className="fixed z-50 w-full border-b border-slate-200/80 bg-white/85 backdrop-blur dark:border-slate-700/80 dark:bg-slate-950/80">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <span className="text-xl font-bold text-primary-light dark:text-white select-none">
+            <span className="select-none bg-gradient-to-r from-primary-light to-blue-600 bg-clip-text text-xl font-bold text-transparent dark:from-white dark:to-blue-300">
               melvin teo
             </span>
           </div>
@@ -46,7 +47,7 @@ export function Header() {
                 key={item.name}
                 href={item.href}
                 onClick={(e) => handleClick(e, item.href)}
-                className="text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-white"
+                className="focus-ring rounded-md px-2 py-1 text-gray-700 transition-colors hover:text-primary-light dark:text-gray-200 dark:hover:text-white"
               >
                 {item.name}
               </a>
@@ -59,7 +60,10 @@ export function Header() {
             <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="ml-4 text-gray-600 dark:text-gray-300"
+              className="focus-ring ml-3 inline-flex h-11 w-11 items-center justify-center rounded-md text-gray-700 hover:bg-slate-100 dark:text-gray-200 dark:hover:bg-slate-800"
+              aria-expanded={mobileMenuOpen}
+              aria-controls={mobileMenuId}
+              aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -68,14 +72,14 @@ export function Header() {
 
         {/* Mobile Navigation */}
         {mobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div id={mobileMenuId} className="md:hidden">
+            <div className="space-y-1 px-2 pb-4 pt-2">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   onClick={(e) => handleClick(e, item.href)}
-                  className="block px-3 py-2 text-gray-600 dark:text-gray-300 hover:text-primary-light dark:hover:text-white"
+                  className="focus-ring block rounded-md px-3 py-2.5 text-base text-gray-700 transition-colors hover:bg-slate-100 hover:text-primary-light dark:text-gray-200 dark:hover:bg-slate-800 dark:hover:text-white"
                 >
                   {item.name}
                 </a>

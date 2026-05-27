@@ -1,4 +1,9 @@
 "use client";
+import {
+  getRevealMotion,
+  useMotionPrefs,
+  VIEWPORT_ONCE,
+} from "@/app/lib/motion";
 import { motion } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
@@ -119,23 +124,21 @@ const projects = [
 ];
 
 export function Projects() {
+  const { reducedMotion, stagger } = useMotionPrefs();
+
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="scroll-mt-24 py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-primary-light dark:text-white mb-12">
-          Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <h2 className="section-heading">Projects</h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800"
+              {...getRevealMotion(reducedMotion, stagger(index, 0.05, 0.3))}
+              viewport={VIEWPORT_ONCE}
+              className="card-surface group flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-900 dark:to-gray-800">
+              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-blue-100/70 to-indigo-100/60 dark:from-blue-900/30 dark:to-indigo-900/20">
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -167,7 +170,7 @@ export function Projects() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-md border border-gray-200 px-3 py-2 text-sm font-medium text-gray-600 transition-colors hover:border-gray-300 hover:text-primary-light dark:border-gray-600 dark:text-gray-300 dark:hover:border-gray-500 dark:hover:text-white"
+                      className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-md border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 transition-colors hover:border-blue-300 hover:text-primary-light dark:border-gray-600 dark:text-gray-200 dark:hover:border-blue-400 dark:hover:text-white"
                     >
                       <FaGithub size={18} />
                       <span>Code</span>
@@ -178,7 +181,7 @@ export function Projects() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 rounded-md bg-primary-light px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-light/90 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
+                      className="focus-ring inline-flex min-h-11 items-center gap-2 rounded-md bg-primary-light px-3 py-2 text-sm font-medium text-white transition-colors hover:bg-link-light dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200"
                     >
                       <ExternalLink size={18} />
                       <span>Live Demo</span>

@@ -1,4 +1,10 @@
 "use client";
+import {
+  cappedStagger,
+  getRevealMotion,
+  useMotionPrefs,
+  VIEWPORT_ONCE,
+} from "@/app/lib/motion";
 import { motion } from "framer-motion";
 import { DiAws, DiJava } from "react-icons/di";
 import type { IconType } from "react-icons/lib";
@@ -42,15 +48,17 @@ interface ToolCategory {
   tools: Tool[];
 }
 
+const toolAccentClasses = [
+  "bg-blue-50 text-blue-600 ring-blue-200 dark:bg-blue-500/10 dark:text-blue-300 dark:ring-blue-500/30",
+  "bg-violet-50 text-violet-600 ring-violet-200 dark:bg-violet-500/10 dark:text-violet-300 dark:ring-violet-500/30",
+  "bg-emerald-50 text-emerald-600 ring-emerald-200 dark:bg-emerald-500/10 dark:text-emerald-300 dark:ring-emerald-500/30",
+  "bg-orange-50 text-orange-600 ring-orange-200 dark:bg-orange-500/10 dark:text-orange-300 dark:ring-orange-500/30",
+  "bg-cyan-50 text-cyan-600 ring-cyan-200 dark:bg-cyan-500/10 dark:text-cyan-300 dark:ring-cyan-500/30",
+];
+
 function ToolIcon({ tool }: { tool: Tool }) {
   const Icon = tool.icon;
-  return (
-    <Icon
-      size={38}
-      aria-label={tool.name}
-      className="text-gray-700 dark:text-gray-200"
-    />
-  );
+  return <Icon size={34} aria-label={tool.name} />;
 }
 
 const toolCategories: ToolCategory[] = [
@@ -193,40 +201,47 @@ const toolCategories: ToolCategory[] = [
 ];
 
 export function Tools() {
+  const { reducedMotion, stagger } = useMotionPrefs();
+
   return (
-    <section id="tools" className="py-20">
+    <section id="tools" className="scroll-mt-24 py-20">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-primary-light dark:text-white mb-12">
-          Technical Skills
-        </h2>
+        <h2 className="section-heading">Technical Skills</h2>
         <div className="space-y-10">
           {toolCategories.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: categoryIndex * 0.2 }}
-              className="space-y-4"
+              {...getRevealMotion(
+                reducedMotion,
+                stagger(categoryIndex, 0.08, 0.24),
+              )}
+              viewport={VIEWPORT_ONCE}
+              className="card-surface space-y-5 p-5 sm:p-6"
             >
-              <h3 className="text-xl font-semibold text-gray-700 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700 pb-2">
+              <h3 className="border-b border-slate-200 pb-2 text-lg font-semibold text-slate-800 dark:border-slate-700 dark:text-slate-200 sm:text-xl">
                 {category.category}
               </h3>
-              <div className="grid grid-cols-4 md:grid-cols-6 lg:grid-cols-8 gap-4">
+              <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
                 {category.tools.map((tool, toolIndex) => (
                   <motion.div
                     key={tool.name}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      delay: categoryIndex * 0.2 + toolIndex * 0.05,
-                    }}
-                    className="group relative flex items-center justify-center p-3 bg-gray-100 dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-110"
+                    {...getRevealMotion(
+                      reducedMotion,
+                      reducedMotion
+                        ? 0
+                        : cappedStagger(
+                            categoryIndex * 4 + toolIndex,
+                            0.03,
+                            0.28,
+                          ),
+                      "scale",
+                    )}
+                    viewport={VIEWPORT_ONCE}
+                    className={`group relative flex h-16 items-center justify-center rounded-xl p-3 ring-1 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${toolAccentClasses[toolIndex % toolAccentClasses.length]}`}
                   >
                     <ToolIcon tool={tool} />
                     {/* Tooltip */}
-                    <div className="absolute -top-10 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap z-10">
+                    <div className="pointer-events-none absolute -top-10 left-1/2 z-10 hidden -translate-x-1/2 whitespace-nowrap rounded bg-gray-900 px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block">
                       {tool.name}
                     </div>
                   </motion.div>

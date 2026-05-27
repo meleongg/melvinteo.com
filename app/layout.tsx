@@ -44,7 +44,7 @@ export default function RootLayout({
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body
-        className={`${lato.className} antialiased bg-white dark:bg-gray-900 transition-colors`}
+        className={`${lato.className} bg-background text-foreground antialiased transition-colors`}
       >
         {children}
         <Analytics />

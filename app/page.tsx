@@ -8,9 +8,9 @@ import { Footer } from "./components/layout/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-200">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-200">
       <Header />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <main className="mx-auto max-w-7xl px-4 pt-16 sm:px-6 lg:px-8">
         <Hero />
         <AboutMe />
         <Tools />

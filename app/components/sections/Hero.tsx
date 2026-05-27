@@ -1,27 +1,32 @@
 "use client";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { getEnterMotion, useMotionPrefs } from "@/app/lib/motion";
+import {
+  motion,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
 import Image from "next/image";
 import { Socials } from "./Socials";
 
 export function Hero() {
+  const { reducedMotion } = useMotionPrefs();
+  const prefersReducedMotion = useReducedMotion() ?? false;
   const { scrollY } = useScroll();
-  const opacity = useTransform(scrollY, [0, 200], [1, 0]);
+  const scrollCueOpacity = useTransform(
+    scrollY,
+    [0, 200],
+    prefersReducedMotion ? [1, 1] : [1, 0],
+  );
+
+  const heroEnter = getEnterMotion(reducedMotion);
+  const photoEnter = getEnterMotion(reducedMotion, 0, "scale");
 
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 relative">
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="text-center"
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-8 flex justify-center"
-        >
-          <div className="relative w-48 h-48 md:w-56 md:h-56 overflow-hidden rounded-full border-4 border-primary-light dark:border-white">
+    <section className="relative flex min-h-screen items-center justify-center py-20">
+      <motion.div {...heroEnter} className="text-center">
+        <motion.div {...photoEnter} className="mb-8 flex justify-center">
+          <div className="relative h-48 w-48 overflow-hidden rounded-full border-4 border-blue-600/90 shadow-lg shadow-blue-200/50 dark:border-blue-300/80 dark:shadow-blue-900/40 md:h-56 md:w-56">
             <Image
               src="/images/profile.jpg"
               alt="Profile photo"
@@ -32,10 +37,10 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <h1 className="text-5xl md:text-7xl font-bold text-primary-light dark:text-white mb-6">
+        <h1 className="mb-6 text-5xl font-bold text-primary-light dark:text-white md:text-7xl">
           Melvin Teo
         </h1>
-        <h2 className="text-2xl md:text-3xl text-gray-600 dark:text-gray-300 mb-8">
+        <h2 className="mb-8 text-2xl text-gray-600 dark:text-gray-200 md:text-3xl">
           Software Engineer
         </h2>
 
@@ -46,11 +51,11 @@ export function Hero() {
             href="https://meleongg.github.io/resume/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary-light dark:bg-white text-white dark:text-gray-900 rounded-lg hover:bg-opacity-90 transition-colors"
+            className="focus-ring inline-flex items-center gap-2 rounded-lg bg-primary-light px-6 py-3 font-medium text-white transition-colors hover:bg-link-light dark:bg-white dark:text-gray-900 dark:hover:bg-slate-200"
           >
             View Resume
             <svg
-              className="w-5 h-5"
+              className="h-5 w-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -65,42 +70,72 @@ export function Hero() {
           </a>
         </div>
 
-        <p className="text-lg text-gray-600 dark:text-gray-400 mb-16">
+        <p className="mb-16 text-lg text-gray-600 dark:text-gray-300">
           Check out my projects and experiences below!
         </p>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.5 }}
-          style={{ opacity }}
-          className="absolute bottom-12 left-1/2 transform -translate-x-1/2"
+          transition={{
+            delay: reducedMotion ? 0 : 0.6,
+            duration: reducedMotion ? 0.2 : 0.4,
+          }}
+          style={{ opacity: scrollCueOpacity }}
+          className="absolute bottom-6 left-1/2 -translate-x-1/2 md:bottom-8"
         >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            className="flex flex-col items-center text-gray-400 dark:text-gray-500"
+          <a
+            href="#about"
+            className="focus-ring inline-flex flex-col items-center rounded-full px-3 py-2 text-gray-500 transition-colors hover:text-primary-light dark:text-gray-300 dark:hover:text-blue-300"
+            aria-label="Scroll to About section"
           >
-            <div className="text-base md:text-lg mb-5 font-medium">
-              Scroll Down
-            </div>
-            <svg
-              className="w-8 h-8 md:w-10 md:h-10"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 14l-7 7m0 0l-7-7m7 7V3"
-              />
-            </svg>
-          </motion.div>
+            {reducedMotion ? (
+              <span className="flex flex-col items-center">
+                <span className="mb-2 text-xs font-semibold tracking-wide md:text-sm">
+                  Scroll Down
+                </span>
+                <svg
+                  className="h-8 w-8 md:h-9 md:w-9"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </span>
+            ) : (
+              <motion.span
+                animate={{ y: [0, 5, 0] }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
+                className="flex flex-col items-center"
+              >
+                <span className="mb-2 text-xs font-semibold tracking-wide md:text-sm">
+                  Scroll Down
+                </span>
+                <svg
+                  className="h-8 w-8 md:h-9 md:w-9"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 14l-7 7m0 0l-7-7m7 7V3"
+                  />
+                </svg>
+              </motion.span>
+            )}
+          </a>
         </motion.div>
       </motion.div>
     </section>
