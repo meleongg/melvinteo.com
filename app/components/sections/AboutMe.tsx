@@ -16,24 +16,22 @@ export function AboutMe() {
           </h2>
           <div className="prose dark:prose-invert max-w-none">
             <p className="text-gray-600 dark:text-gray-300 space-y-4">
-              I&apos;m a Software Engineer passionate about crafting
-              productivity and organizational tools that simplify daily
-              workflows. Recently, I&apos;ve developed a growing interest in
-              natural language processing and computational linguistics,
-              exploring how language technologies can enhance user experience
-              and understanding.
+              I&apos;m a Software Engineer passionate about building products
+              that boost productivity and simplify daily lives. Recently,
+              I&apos;ve developed a growing interest in natural language
+              processing and uncovering the "black box" of LLMs.
             </p>
 
             <p className="text-gray-600 dark:text-gray-300 mt-4">
-              Through internships, hackathons, and personal projects, I&apos;ve
-              gained hands-on experience in Full-Stack Development while
-              collaborating with designers, product managers, and engineers.
+              Through internships, hackathons, and projects, I&apos;ve gained
+              hands-on experience in Full-Stack Web Development and AI
+              Engineering while collaborating with designers, product managers,
+              and other engineers.
             </p>
 
             <p className="text-gray-600 dark:text-gray-300 mt-4">
-              Outside of programming, you&apos;ll find me looking for my next
-              travel destination, lifting weights at the gym, or playing
-              volleyball with friends!
+              In my free time, I enjoy travelling the world, playing volleyball,
+              and learning foreign languages.
             </p>
           </div>
         </motion.div>
