@@ -9,7 +9,20 @@ import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 
-const projects = [
+type ProjectImageFit = "cover" | "contain";
+
+interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  github?: string;
+  live?: string;
+  image: string;
+  /** Use "contain" for portrait/mobile screenshots so they aren't cropped. */
+  imageFit?: ProjectImageFit;
+}
+
+const projects: Project[] = [
   {
     title: "Stamped",
     description:
@@ -18,9 +31,9 @@ const projects = [
       "Next.js",
       "React",
       "TypeScript",
+      "Redis",
       "Tailwind CSS",
       "D3.js",
-      "Vercel Analytics",
     ],
     github: "https://github.com/meleongg/personal-world-map",
     live: "https://stamped-travel.vercel.app",
@@ -59,13 +72,14 @@ const projects = [
     image: "/images/flashlearn.png",
   },
   {
-    title: "Fitflow",
+    title: "Embur",
     description:
       "Full-stack fitness tracker with workout logging, progress visualization, and performance analytics.",
     technologies: ["Next.js", "Supabase", "Tailwind CSS", "TypeScript"],
-    github: "https://github.com/fitflow",
-    live: "https://fitflow-pi.vercel.app/",
-    image: "/images/fitflow.png",
+    github: "https://github.com/Embur",
+    live: "https://embur.vercel.app/",
+    image: "/images/embur.png",
+    imageFit: "contain",
   },
   {
     title: "Holistic Health Tracker",
@@ -89,7 +103,7 @@ const projects = [
     title: "HackerHare",
     description:
       "Chrome extension that intentionally slows form filling to promote mindful data entry habits.",
-    technologies: ["Chrome Manifest V3", "HTML", "CSS"],
+    technologies: ["Chrome Manifest V3", "HTML", "CSS", "JS"],
     github: "https://github.com/DonaldKLee/Stormhacks-2024",
     live: "https://stormhacks-2024-site.vercel.app/",
     image: "/images/hackerhare.png",
@@ -102,15 +116,6 @@ const projects = [
     github: "https://github.com/expawdition",
     live: undefined,
     image: "/images/expawdition.jpg",
-  },
-  {
-    title: "liftz",
-    description:
-      "Comprehensive workout tracker with exercise library, history calendar, and plate calculator.",
-    technologies: ["React", "Express", "MongoDB", "Node.js", "Next.js"],
-    github: undefined,
-    live: "https://liftz-workout-tracker.vercel.app/",
-    image: "/images/liftz.png",
   },
   {
     title: "phreview",
@@ -138,14 +143,26 @@ export function Projects() {
               viewport={VIEWPORT_ONCE}
               className="card-surface group flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-blue-100/70 to-indigo-100/60 dark:from-blue-900/30 dark:to-indigo-900/20">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                />
+              <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-blue-100/70 to-indigo-100/60 p-3 sm:p-4 dark:from-blue-900/30 dark:to-indigo-900/20">
+                <div
+                  className={`relative h-full w-full overflow-hidden rounded-lg ${
+                    project.imageFit === "contain"
+                      ? "bg-slate-950 ring-1 ring-slate-800/80"
+                      : ""
+                  }`}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className={
+                      project.imageFit === "contain"
+                        ? "object-contain object-center transition-transform duration-500 group-hover:scale-[1.03]"
+                        : "object-cover object-top transition-transform duration-500 group-hover:scale-[1.03]"
+                    }
+                  />
+                </div>
               </div>
               <div className="flex flex-1 flex-col p-5 sm:p-6">
                 <h3 className="mb-2 text-xl font-bold text-gray-800 dark:text-white">
