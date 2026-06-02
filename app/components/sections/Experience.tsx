@@ -5,90 +5,75 @@ import {
   VIEWPORT_ONCE,
 } from "@/app/lib/motion";
 import { motion } from "framer-motion";
+import { ExternalLink } from "lucide-react";
+
+const RESUME_URL = "https://meleongg.github.io/resume/";
+const MAX_HIGHLIGHTS = 3;
 
 interface Experience {
-  company: string;
-  position: string;
+  organization: string;
+  subtitle?: string;
+  role: string;
   period: string;
-  description: string | string[];
+  highlights: string[];
 }
 
 const experiences: Experience[] = [
   {
-    company: "Amazon",
-    position: "Software Engineer",
-    period: "Jun. 2026 - Present",
-    description: [],
+    organization: "Amazon",
+    role: "Software Engineer",
+    period: "Jun. 2026 – Present",
+    highlights: ["Joining Amazon as a Software Engineer in June 2026."],
   },
   {
-    company: "Co-Founder",
-    position: "Spoddr",
-    period: "Sept. 2025 - Apr. 2026",
-    description: [
-      "Co-founded a social fitness platform as a team of 6 (2 Software Engineers, 1 Hardware Engineer, 1 Product Manager, 1 Finance, 1 Marketing) from initial customer discovery and validation to full-stack MVP launch",
-      "Architected the core mobile-web client (Expo), SQL database schemas, FastAPI business logic, and BLE/Arduino hardware integration to automate rep/weight tracking and eliminate manual logging friction",
-      "Engineered the AWS cloud infrastructure (ECS, RDS, Cognito) and observability stack (CloudWatch)",
+    organization: "Spoddr",
+    subtitle: "Social fitness platform",
+    role: "Co-Founder",
+    period: "Sept. 2025 – Apr. 2026",
+    highlights: [
+      "Co-founded with a team of six, spanning customer discovery to full-stack MVP launch.",
+      "Built Expo + FastAPI + BLE/Arduino tracking on AWS (ECS, RDS, Cognito) to automate gym logging.",
     ],
   },
   {
-    company: "The University of British Columbia",
-    position: "Undergraduate Student Researcher",
-    period: "Sept. 2025 - Apr. 2026",
-    description: [
-      "Designed and trained a Sparse Autoencoder (SAE) to map and disentangle latent representations of a 70M-parameter transformer model, achieving an 93\%+ reconstruction score (R²) on a 600K-token dataset",
-      "Built an ETL pipeline to aggregate, clean, and resolve conflicting schemas across disparate NLP data sources (Universal Dependencies, WordNet, VerbNet, Wiktionary) into a unified sparse matrix",
-      "Presented research abstract at both the Language Sciences and CS Student Research Conferences",
+    organization: "University of British Columbia",
+    subtitle: "NLP & model interpretability research",
+    role: "Undergraduate Student Researcher",
+    period: "Sept. 2025 – Apr. 2026",
+    highlights: [
+      "Studied disentangled latent structure in a 70M-parameter transformer with sparse autoencoders (93%+ R² on 600K tokens).",
+      "Unified messy NLP corpora (UD, WordNet, VerbNet, Wiktionary) into one ETL pipeline; presented at Language Sciences and CS research conferences.",
     ],
   },
   {
-    company: "Amazon Payments",
-    position: "Software Engineer Intern",
-    period: "May - Aug. 2025",
-    description: [
-      "Engineered a CloudWatch MCP Server in TypeScript for internal teams to automate workflows with AI agents",
-      "Accelerated integration test generation by 90% by leveraging CloudWatch service logs, AI agents, and MCP servers",
-      "Automated CloudWatch metrics comparison with a hybrid shell script and agentic AI workflow with MCP servers",
+    organization: "Amazon Payments",
+    role: "Software Engineer Intern",
+    period: "May – Aug. 2025",
+    highlights: [
+      "Built a CloudWatch MCP server in TypeScript so internal teams could wire AI agents into ops workflows.",
+      "Accelerated integration test generation by ~90% using service logs and agentic tooling.",
     ],
   },
   {
-    company:
-      "nwPlus - Organizers of the largest hackathons in Western Canada (HackCamp, nwHacks, cmd-f)",
-    position: "Co-President, Software Development Director, Logistics Director",
-    period: "May 2022 - May 2025",
-    description: [
-      "Led 55-member team to organize 3 major hackathons, welcoming 1,150+ participants and 79 sponsors",
-      "Managed 6-engineer team shipping 8 projects supporting 1,700+ users",
-      "Spearheaded the largest beginner-friendly hackathon in Western Canada, attracting 100+ first-time hackers",
+    organization: "nwPlus",
+    subtitle:
+      "Student org behind Western Canada's largest hackathons (HackCamp, nwHacks, cmd-f)",
+    role: "Co-President, Software Development Director, Logistics Director",
+    period: "May 2022 – May 2025",
+    highlights: [
+      "Led a 55-person team running three major hackathons (1,150+ participants, 79 sponsors).",
+      "Managed six engineers shipping eight internal tools used by 1,700+ people.",
     ],
   },
   {
-    company: "Amazon Prime - Customer Engagement",
-    position: "Software Engineer Intern",
-    period: "May - Aug. 2024",
-    description: [
-      "Reduced onboarding time for PMs by 98% by building a 100% self-service customer state management web app",
-      "Implemented dynamic React forms using JSON Form Schema to populate content from DynamoDB schema",
-      "Refactored Java API controllers to adopt new DynamoDB schema and support JSON serialization",
-    ],
-  },
-  {
-    company: "Amazon Prime - Customer Retention",
-    position: "Software Engineer Intern",
-    period: "May - Aug. 2023",
-    description: [
-      "Reduced Prime membership cancellation processing time by 33% by optimizing AWS service configurations",
-      "Refactored CloudWatch dashboards and alarms in TypeScript to improve observability of cancellation traffic",
-      "Simplified QA work in A/B testing by building a browser cookie override tool in Java, saving 15 mins/test",
-    ],
-  },
-  {
-    company: "Amazon Prime - Customer Retention",
-    position: "Amazon Future Engineer Intern",
-    period: "May - Aug. 2022",
-    description: [
-      "Retained 10,000+ annual Prime customers by developing targeted retention emails and personalized widgets",
-      "Cut costs by 43% and development time by 49% by automating feature deployment with Bash shell scripts",
-      "Performed manual QA testing and data validation using customer mocking tools",
+    organization: "Amazon Prime",
+    subtitle: "Customer Engagement & Retention",
+    role: "Software Engineer Intern · Amazon Future Engineer Intern",
+    period: "May – Aug 2024 · May – Aug 2023 · May – Aug 2022",
+    highlights: [
+      "Self-service customer-state app that cut PM onboarding time by 98% (React, JSON Schema, DynamoDB, Java).",
+      "Cancellation pipeline work: 33% faster processing, TypeScript CloudWatch dashboards, and Java tooling for A/B QA.",
+      "Retention emails/widgets plus Bash deployment automation (~43% infra cost, ~49% dev time savings).",
     ],
   },
 ];
@@ -99,42 +84,63 @@ export function Experience() {
   return (
     <section id="experience" className="scroll-mt-24 py-20">
       <div className="mx-auto max-w-6xl px-4">
-        <h2 className="section-heading">Experience</h2>
-        <div className="card-surface space-y-10 p-6 sm:p-8">
-          {experiences.map((exp, index) => (
-            <motion.div
-              key={index}
-              {...getRevealMotion(
-                reducedMotion,
-                stagger(index, 0.06, 0.36),
-                "x",
-              )}
-              viewport={VIEWPORT_ONCE}
-              className="relative border-l-2 border-blue-500/70 pl-8 dark:border-blue-400/60"
-            >
-              <div className="absolute -left-[9px] top-1 h-4 w-4 rounded-full bg-blue-500 dark:bg-blue-400" />
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl">
-                {exp.position}
-              </h3>
-              <p className="mb-2 text-gray-700 dark:text-gray-200">
-                {exp.company}
-              </p>
-              <p className="mb-4 text-sm text-gray-600 dark:text-gray-300">
-                {exp.period}
-              </p>
-              <div className="text-gray-700 dark:text-gray-200">
-                {Array.isArray(exp.description) ? (
-                  <ul className="list-inside list-disc space-y-1.5">
-                    {exp.description.map((bullet, bulletIndex) => (
-                      <li key={bulletIndex}>{bullet}</li>
+        <div className="mb-10 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <h2 className="section-heading mb-0">Experience</h2>
+          <a
+            href={RESUME_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="focus-ring inline-flex items-center gap-1.5 text-sm font-medium text-link-light transition-colors hover:text-primary-light dark:text-link-dark dark:hover:text-white"
+          >
+            View full resume
+            <ExternalLink className="h-4 w-4" aria-hidden />
+          </a>
+        </div>
+        <div className="card-surface space-y-12 p-6 sm:p-8">
+          {experiences.map((exp, index) => {
+            const highlights = exp.highlights.slice(0, MAX_HIGHLIGHTS);
+
+            return (
+              <motion.article
+                key={`${exp.organization}-${exp.role}-${exp.period}`}
+                {...getRevealMotion(
+                  reducedMotion,
+                  stagger(index, 0.06, 0.36),
+                  "x",
+                )}
+                viewport={VIEWPORT_ONCE}
+                className="relative border-l-2 border-blue-500/70 pl-8 dark:border-blue-400/60"
+              >
+                <div
+                  className="absolute -left-[9px] top-1.5 h-4 w-4 rounded-full bg-blue-500 dark:bg-blue-400"
+                  aria-hidden
+                />
+                <header className="mb-3">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white sm:text-xl">
+                    {exp.role}
+                  </h3>
+                  <p className="mt-0.5 font-medium text-gray-800 dark:text-gray-100">
+                    {exp.organization}
+                  </p>
+                  {exp.subtitle ? (
+                    <p className="mt-1 text-sm leading-snug text-gray-600 dark:text-gray-400">
+                      {exp.subtitle}
+                    </p>
+                  ) : null}
+                  <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+                    {exp.period}
+                  </p>
+                </header>
+                {highlights.length > 0 ? (
+                  <ul className="list-outside list-disc space-y-2 pl-5 text-[0.95rem] leading-relaxed text-gray-700 dark:text-gray-200">
+                    {highlights.map((bullet) => (
+                      <li key={bullet}>{bullet}</li>
                     ))}
                   </ul>
-                ) : (
-                  <p>{exp.description}</p>
-                )}
-              </div>
-            </motion.div>
-          ))}
+                ) : null}
+              </motion.article>
+            );
+          })}
         </div>
       </div>
     </section>

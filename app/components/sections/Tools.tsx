@@ -1,6 +1,5 @@
 "use client";
 import {
-  cappedStagger,
   getRevealMotion,
   useMotionPrefs,
   VIEWPORT_ONCE,
@@ -56,200 +55,103 @@ const toolAccentClasses = [
   "bg-cyan-50 text-cyan-600 ring-cyan-200 dark:bg-cyan-500/10 dark:text-cyan-300 dark:ring-cyan-500/30",
 ];
 
-function ToolIcon({ tool }: { tool: Tool }) {
+function ToolTile({ tool, accentClass }: { tool: Tool; accentClass: string }) {
   const Icon = tool.icon;
-  return <Icon size={34} aria-label={tool.name} />;
+  return (
+    <div
+      className={`group relative flex h-14 flex-col items-center justify-center gap-1 rounded-lg px-2 py-1.5 ring-1 transition-all duration-200 hover:-translate-y-0.5 hover:shadow-sm sm:h-[3.25rem] ${accentClass}`}
+    >
+      <Icon size={26} aria-hidden />
+      <span className="max-w-full truncate text-[10px] font-medium leading-none text-current/90 sm:text-[11px]">
+        {tool.name}
+      </span>
+    </div>
+  );
 }
 
 const toolCategories: ToolCategory[] = [
   {
     category: "Languages",
     tools: [
-      {
-        name: "Python",
-        icon: SiPython,
-      },
-      {
-        name: "TypeScript",
-        icon: SiTypescript,
-      },
-      {
-        name: "JavaScript",
-        icon: SiJavascript,
-      },
-      {
-        name: "Java",
-        icon: DiJava,
-      },
-      {
-        name: "Go",
-        icon: SiGo,
-      },
-      {
-        name: "C",
-        icon: SiC,
-      },
-      {
-        name: "C++",
-        icon: SiCplusplus,
-      },
-      {
-        name: "SQL",
-        icon: SiMysql,
-      },
-      {
-        name: "HTML5",
-        icon: SiHtml5,
-      },
-      {
-        name: "CSS3",
-        icon: SiCss,
-      },
+      { name: "Python", icon: SiPython },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Java", icon: DiJava },
+      { name: "Go", icon: SiGo },
+      { name: "C", icon: SiC },
+      { name: "C++", icon: SiCplusplus },
+      { name: "SQL", icon: SiMysql },
+      { name: "HTML5", icon: SiHtml5 },
+      { name: "CSS3", icon: SiCss },
     ],
   },
   {
-    category: "Frameworks & Databases",
+    category: "Full-stack & cloud",
     tools: [
-      {
-        name: "React",
-        icon: SiReact,
-      },
-      {
-        name: "Expo (React Native)",
-        icon: SiExpo,
-      },
-      {
-        name: "FastAPI",
-        icon: SiFastapi,
-      },
-      {
-        name: "Express",
-        icon: SiExpress,
-      },
-      {
-        name: "Node.js",
-        icon: SiNodedotjs,
-      },
-      {
-        name: "Supabase",
-        icon: SiSupabase,
-      },
-      {
-        name: "MongoDB",
-        icon: SiMongodb,
-      },
-      {
-        name: "Firebase",
-        icon: SiFirebase,
-      },
+      { name: "React", icon: SiReact },
+      { name: "Expo", icon: SiExpo },
+      { name: "FastAPI", icon: SiFastapi },
+      { name: "Express", icon: SiExpress },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Supabase", icon: SiSupabase },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "Firebase", icon: SiFirebase },
+      { name: "AWS", icon: DiAws },
+      { name: "Docker", icon: SiDocker },
+      { name: "Vercel", icon: SiVercel },
+      { name: "Railway", icon: SiRailway },
+      { name: "Git", icon: SiGit },
+      { name: "GitHub Actions", icon: SiGithubactions },
     ],
   },
   {
-    category: "Developer Tools",
+    category: "ML / NLP",
     tools: [
-      {
-        name: "AWS",
-        icon: DiAws,
-      },
-      {
-        name: "Railway",
-        icon: SiRailway,
-      },
-      {
-        name: "Vercel",
-        icon: SiVercel,
-      },
-      {
-        name: "Docker",
-        icon: SiDocker,
-      },
-      {
-        name: "Git",
-        icon: SiGit,
-      },
-      {
-        name: "GitHub Actions",
-        icon: SiGithubactions,
-      },
-    ],
-  },
-  {
-    category: "Libraries",
-    tools: [
-      {
-        name: "PyTorch",
-        icon: SiPytorch,
-      },
-      {
-        name: "Transformers (HF)",
-        icon: SiHuggingface,
-      },
-      {
-        name: "Scikit-learn",
-        icon: SiScikitlearn,
-      },
-      {
-        name: "spaCy",
-        icon: SiSpacy,
-      },
-      {
-        name: "NumPy",
-        icon: SiNumpy,
-      },
+      { name: "PyTorch", icon: SiPytorch },
+      { name: "Hugging Face", icon: SiHuggingface },
+      { name: "Scikit-learn", icon: SiScikitlearn },
+      { name: "spaCy", icon: SiSpacy },
+      { name: "NumPy", icon: SiNumpy },
     ],
   },
 ];
 
 export function Tools() {
-  const { reducedMotion, stagger } = useMotionPrefs();
+  const { reducedMotion } = useMotionPrefs();
 
   return (
     <section id="tools" className="scroll-mt-24 py-20">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="mx-auto max-w-6xl px-4">
         <h2 className="section-heading">Technical Skills</h2>
-        <div className="space-y-10">
+        <motion.div
+          {...getRevealMotion(reducedMotion)}
+          viewport={VIEWPORT_ONCE}
+          className="card-surface divide-y divide-slate-200/80 p-4 dark:divide-slate-700/80 sm:p-5"
+        >
           {toolCategories.map((category, categoryIndex) => (
-            <motion.div
+            <section
               key={category.category}
-              {...getRevealMotion(
-                reducedMotion,
-                stagger(categoryIndex, 0.08, 0.24),
-              )}
-              viewport={VIEWPORT_ONCE}
-              className="card-surface space-y-5 p-5 sm:p-6"
+              className={categoryIndex === 0 ? "pb-5" : "py-5 last:pb-0"}
             >
-              <h3 className="border-b border-slate-200 pb-2 text-lg font-semibold text-slate-800 dark:border-slate-700 dark:text-slate-200 sm:text-xl">
+              <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide text-slate-600 dark:text-slate-400">
                 {category.category}
               </h3>
-              <div className="grid grid-cols-3 gap-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+              <div className="grid grid-cols-4 gap-2 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7">
                 {category.tools.map((tool, toolIndex) => (
-                  <motion.div
+                  <ToolTile
                     key={tool.name}
-                    {...getRevealMotion(
-                      reducedMotion,
-                      reducedMotion
-                        ? 0
-                        : cappedStagger(
-                            categoryIndex * 4 + toolIndex,
-                            0.03,
-                            0.28,
-                          ),
-                      "scale",
-                    )}
-                    viewport={VIEWPORT_ONCE}
-                    className={`group relative flex h-16 items-center justify-center rounded-xl p-3 ring-1 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md ${toolAccentClasses[toolIndex % toolAccentClasses.length]}`}
-                  >
-                    <ToolIcon tool={tool} />
-                    {/* Tooltip */}
-                    <div className="pointer-events-none absolute -top-10 left-1/2 z-10 hidden -translate-x-1/2 whitespace-nowrap rounded bg-gray-900 px-2 py-1 text-xs text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:block">
-                      {tool.name}
-                    </div>
-                  </motion.div>
+                    tool={tool}
+                    accentClass={
+                      toolAccentClasses[
+                        (categoryIndex + toolIndex) % toolAccentClasses.length
+                      ]
+                    }
+                  />
                 ))}
               </div>
-            </motion.div>
+            </section>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
