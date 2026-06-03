@@ -5,18 +5,13 @@ import { themeScript } from "./lib/theme-script";
 import { lato } from "./ui/fonts";
 
 export const metadata: Metadata = {
-  title: "Melvin Teo",
+  title: "melvin teo",
   description: "Melvin Teo's personal website",
-  icons: {
-    icon: [
-      {
-        url: "/icon.svg",
-        sizes: "any",
-      },
-    ],
+  appleWebApp: {
+    title: "melvin teo",
   },
   openGraph: {
-    title: "Melvin Teo",
+    title: "melvin teo",
     description: "Melvin Teo's personal website",
     images: [
       {
@@ -42,6 +37,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <meta name="apple-mobile-web-app-title" content="Melvin Teo" />
       </head>
       <body
         className={`${lato.className} bg-background text-foreground antialiased transition-colors`}

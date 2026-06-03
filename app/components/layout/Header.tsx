@@ -34,11 +34,19 @@ export function Header() {
     <header className="fixed z-50 w-full border-b border-slate-200/80 bg-white/85 backdrop-blur dark:border-slate-700/80 dark:bg-slate-950/80">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex-shrink-0">
+          <a
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+            className="focus-ring flex-shrink-0 rounded-md"
+            aria-label="Melvin Teo — back to top"
+          >
             <span className="select-none bg-gradient-to-r from-primary-light to-blue-600 bg-clip-text text-xl font-bold text-transparent dark:from-white dark:to-blue-300">
               melvin teo
             </span>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
