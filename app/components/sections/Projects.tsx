@@ -38,12 +38,12 @@ const projects: Project[] = [
       "D3.js",
     ],
     github: "https://github.com/meleongg/personal-world-map",
-    live: "https://stamped-travel.vercel.app",
+    live: "https://stamped-travels.vercel.app",
     image: "/images/stamped.png",
     featured: true,
   },
   {
-    title: "ChefPath",
+    title: "Mise",
     description:
       "AI-powered cooking mentor that generates adaptive weekly meal plans, guides step-by-step cooking, and personalizes future recipes from your feedback.",
     technologies: [
@@ -55,9 +55,9 @@ const projects: Project[] = [
       "SQLAlchemy",
       "LangChain/LangGraph",
     ],
-    github: "https://github.com/meleongg/chef-path",
-    live: "https://chefpath.vercel.app",
-    image: "/images/chefpath.png",
+    github: "https://github.com/meleongg/mise-frontend",
+    live: "https://cookwithmise.vercel.app",
+    image: "/images/mise.png",
     featured: true,
   },
   {
@@ -105,7 +105,7 @@ const projects: Project[] = [
     github: "https://github.com/news-summarizer-frontend",
     live: "https://news-summarizer-frontend.vercel.app/",
     image: "/images/ai-news-summarizer.png",
-    featured: true,
+    featured: false,
   },
   {
     title: "Holistic Health Tracker",
@@ -125,7 +125,7 @@ const projects: Project[] = [
     github: "https://github.com/DonaldKLee/Stormhacks-2024",
     live: "https://stormhacks-2024-site.vercel.app/",
     image: "/images/hackerhare.png",
-    featured: false,
+    featured: true,
   },
   {
     title: "phreview",
