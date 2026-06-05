@@ -120,9 +120,15 @@ const projects: Project[] = [
   {
     title: "HackerHare",
     description:
-      "Chrome extension that intentionally slows form filling to promote mindful data entry habits.",
-    technologies: ["Chrome Manifest V3", "HTML", "CSS"],
-    github: "https://github.com/DonaldKLee/Stormhacks-2024",
+      "On-device browser security extension: form shielding, dark-pattern alerts, and phishing hostname detection. Built with Plasmo MV3; optional opt-in anonymous telemetry only.",
+    technologies: [
+      "Chrome Manifest V3",
+      "Plasmo",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+    ],
+    github: "https://github.com/meleongg/hackerhare-extension",
     live: "https://hackerhare.vercel.app/",
     image: "/images/hackerhare.png",
     featured: true,
