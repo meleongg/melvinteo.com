@@ -45,7 +45,7 @@ const projects: Project[] = [
   {
     title: "Mise",
     description:
-      "AI-powered cooking mentor that generates adaptive weekly meal plans, guides step-by-step cooking, and personalizes future recipes from your feedback.",
+      "Adaptive weekly meal plans with Sodie AI coaching, shopping lists scaled to your servings, Kitchen Mode timers and read-aloud, and Analytics Tips that can land on next week’s plan.",
     technologies: [
       "Next.js",
       "TypeScript",
